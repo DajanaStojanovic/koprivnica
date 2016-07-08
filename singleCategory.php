@@ -15,15 +15,15 @@ $allEvents = $events->fetchAll(PDO::FETCH_OBJ);
 	<script src="js/languages/jquery.event.calendar.en.js"></script>
 	<img src="images/images.png" alt="Slika kategorije" class="category_img" />
 
-<div class="<?php echo $_GET["cat"];?>">
+<div class="single_category_title <?php echo $_GET["cat"];?>">
 	<h1><?php echo $_GET["cat"];?></h1>
 </div>
 
 <div class="content">
 	<div class="row">
-		<h1> Događaji za mjesec: <?php echo $currentMonth;?> </h1>
+		<h2> Događaji za mjesec: <?php echo $currentMonth;?> </h2>
 	</div>
-	<div class="row">
+	<div class="row calendar">
 	
 	<?php 
 	$dan31 = array("01", "03", "05", "07", "08", "10", "12");
@@ -51,7 +51,7 @@ $allEvents = $events->fetchAll(PDO::FETCH_OBJ);
 				<a href="<?php echo $put;?>singleDay.php?day=<?php echo $day;?>&cat=<?php echo $_GET["cat"];?>">
 					<div class="col-xs-4 col-md-2 col-lg-1" 
 					style="background-color: <?php if($numberOfEvents==0){ echo "white;";}else{ echo "#0178BC; color: white";}?>
-					; border: 1px solid blue; text-align: center;">
+					; border: 1px solid #0178BC; text-align: center;">
 						<div class="calendarDay" id="<?php echo $day;?>">
 							
 								<h1> <?php echo $day;?> </h1>

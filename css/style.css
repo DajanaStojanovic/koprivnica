@@ -50,6 +50,7 @@ body {
 	height: 450px;
 	position: relative;
 	top: 0;
+	z-index: -1;
 }
 
 .post_image {
@@ -126,7 +127,35 @@ body {
 		font-size: 70px;
 		padding-top: 70px;
 	}
-
+	.single_day_header hr {
+		width: 30%;
+	}
+	.single_day_image img {
+		min-height: 150px;
+		height: 100%;
+		width: 100%;
+	}
+	.single_day_location {
+		min-height: 150px;
+	}
+	.single_day_content {
+		min-height: 150px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		color: #0178BC;
+	}
+	.single_day_location button {
+		position: absolute;
+		right: 80px;
+		bottom: 0;
+	}
+	.single_day_description a {
+		text-decoration: none;
+		color: #0178BC;
+	}
+	.single_day_description p {
+		font-size: 15px;
+	}
 
 /*Kategorije na naslovnoj */
 .news_image {
@@ -390,7 +419,7 @@ body {
 			width: 30%;
 			min-height: 300px;
 		}
-			.category_çulture_news a {
+			.category_culture_news a {
 				text-decoration: none;
 			}
 			.category_culture_news h1 {
@@ -449,7 +478,7 @@ body {
 			width: 30%;
 			min-height: 300px;
 		}
-			.category_sçhool_news a {
+			.category_school_news a {
 				text-decoration: none;
 			}
 
@@ -489,3 +518,28 @@ body {
 			    width: 100%;
 			    //transition: width .3s;
 			}
+
+/*Single category*/
+.single_category_title {
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	background-color: #0178BC;
+	margin-top: -70px;
+	z-index: 9999;
+	padding: 5px 0;
+}
+
+.content h2 {
+	text-align: center;
+	color: #0178BC;
+}
+
+.calendar {
+	margin: 20px auto 40px;
+	width: 90%;
+
+}
+	.calendar a {
+		color: #0178BC;
+	}

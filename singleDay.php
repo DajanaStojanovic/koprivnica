@@ -10,20 +10,27 @@ $allDayEvents = $day->fetchAll(PDO::FETCH_OBJ);
 
 <div class="single_day_header" style="text-align: center;">
 	<p><?php echo $_GET["day"] . "." . $currentMonth . ".";?></p>
-	<hr width="30%"/>
+	<hr />
 	 Kategorija: <?php echo $_GET["cat"];?>
 </div>
 <?php foreach($allDayEvents as $events):?>
 <div class="single_day_content row">
-	<div class="col-md-3">
-		<h3> <?php echo $events->name;?> </h3>
-	</div>
+	<div class="col-md-3 single_day_image">
+		<?php if(isset($events->pic_extension)):?>
+			<img src="<?php echo $put;?>/images/<?php echo $events->id . "." . $events->pic_extension;?>" />
 
-	<div class="col-md-6">
-		<?php echo $events->description;?>
+		<?php else:?>
+			<img src="images/placeholder.png" />
+		<?php endif;?>
+		
 	</div>
-	<div class="col-md-3">
-		<button> Lokacija </button>
+ 
+	<div class="col-md-7 single_day_description">
+		<a href="singlePost.php?id=<?php echo $events->id;?>"><h3> <?php echo $events->name;?> </h3></a>
+		<p><?php echo $events->description;?></p>
+	</div>
+	<div class="col-md-2 single_day_location">
+		<button class="btn btn-default"> Lokacija </button>
 	</div>
 </div>
 <?php endforeach;?>
