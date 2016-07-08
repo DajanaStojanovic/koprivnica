@@ -27,3 +27,7 @@ $veza->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $veza->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 $veza->exec("SET CHARACTER SET utf8");
 $veza->exec("SET NAMES utf8");
+
+//Current month
+$now = new \DateTime('now');
+$currentMonth = $now->format('m');

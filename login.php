@@ -3,10 +3,10 @@ include_once 'konfiguracija.php';
 if(!$_POST){
 	echo "Polja za prijavu ne smiju biti prazna";
 }else{
-	$lozinka = md5($_POST["lozinka"]);
-	$login = $veza->prepare("select * from operater where korisnicko_ime=:korisnickoIme and lozinka=:lozinka");
-	$login->bindParam(":korisnickoIme", $_POST["korisnickoime"]);
-	$login->bindParam(":lozinka", $lozinka);
+	$password = md5($_POST["password"]);
+	$login = $veza->prepare("select * from k_operater where email=:email and password=:password");
+	$login->bindParam(":email", $_POST["korisnickoime"]);
+	$login->bindParam(":password", $password);
 	$login->execute();
 	$userdata = $login->fetch(PDO::FETCH_OBJ);
 	

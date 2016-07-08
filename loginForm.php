@@ -12,20 +12,20 @@
 		<form class="form-horizontal" role="form">
 			  <div class="form-group">
 			    <div class="col-sm-12">
-			    	<input type="text" class="form-control" id="korisnickoime" placeholder="Korisničko ime">
+			    	<input type="text" class="form-control" id="email" placeholder="E-mail">
 			  </div>
 			  </div>
 
 			 <div class="form-group">
 			    <div class="col-sm-12">
-			   		<input type="password" class="form-control" id="lozinka" placeholder="Lozinka">
+			   		<input type="password" class="form-control" id="password" placeholder="Password">
 				</div>
 			  </div>
 
 			
 			  <div class="form-group"> 
 			    <div class="col-sm-12">
-			      <button id="login" class="btn btn-default">Prijavi se</button>
+			      <button id="login" class="btn btn-default">Log in</button>
 			    </div>
 			  </div>
 			</form>
@@ -40,12 +40,12 @@
 	</div>
 <script>
 $("#login").click(function(){
-	var korisnickoime = $.trim($("#korisnickoime").val());
-	var lozinka = $.trim($("#lozinka").val());
+	var email = $.trim($("#email").val());
+	var password = $.trim($("#password").val());
 	$.ajax({
 				type: 'POST',
 				url: 'login.php',
-				data: "korisnickoime=" + korisnickoime + "&lozinka=" + lozinka,
+				data: "email=" + email + "&password=" + password,
 				dataType: 'text'
 			}).done(function(rezultat) {
 				if(rezultat=="OK"){
