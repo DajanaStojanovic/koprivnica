@@ -31,32 +31,7 @@ body {
     width: 100%;
     //transition: width .3s;
 }
-.login_button {
-	position: absolute;
-}
-	.login_button button {
-		background-color: transparent;
-		border: none;
-	}
-		.login_button button img {
-			width: 30px;
-			position: absolute;
-			z-index: 9999;
-			height: auto;
-			left: 20px;
-		}
 
-.register_button {
-	position: absolute;
-	z-index: 9999;
-	top: 16px;
-	left: 60px;
-}	
-	.register_button button {
-		color: #fff;
-		border-color: transparent;
-		background-color: transparent;
-	}
 .video_start {
 	width: 100%;
 	height: 450px;
@@ -83,4 +58,60 @@ body {
 	background-color: #0178BC;
 	color: #fff;
 	padding: 10px;
+}
+
+/*modal*/
+.login_button {
+	position: absolute;
+}
+	.login_button button {
+		background-color: transparent;
+		border: none;
+	}
+		.login_button button img {
+			width: 30px;
+			position: absolute;
+			z-index: 9999;
+			height: auto;
+			left: 20px;
+		}
+
+.register_button {
+	position: absolute;
+	z-index: 9999;
+	top: 16px;
+	left: 60px;
+}	
+	.register_button button {
+		color: #fff;
+		border-color: transparent;
+		background-color: transparent;
+	}
+	.modal {
+		top:40px;
+		left: 10px;
+		right: initial;
+	}
+	.modal-backdrop {
+	    position: fixed;
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    left: 0;
+	    z-index: 1040;
+	    background-color: transparent !important;
+	}
+	.modal-dialog {
+		width: 400px;
+	}
+
+/*-----------------------------*/
+.btn-default {
+	border: 2px solid #0178BC;
+}
+
+.btn-default:hover {
+	background-color: #0178BC;
+	color: #fff;
+	border: 2px solid #0178BC;
 }
