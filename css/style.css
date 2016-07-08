@@ -181,6 +181,7 @@ video {
 	z-index: -1;
 	width: 100%;
 	height: 100%;
+	object-fit: cover;
 }
 
 .category_fun {
@@ -598,8 +599,21 @@ video {
 	left: 16%;
 }
 .content_index {
-	margin-top: -80px;
+	margin-top: -40px;
 	z-index: 9999;
+}
+
+@media(max-width: 1430px) {
+	.content_index {
+		margin-top: -80px;
+	}
+}
+
+
+@media(max-width: 1280px) {
+	.content_index {
+		margin-top: -160px;
+	}
 }
 @media(max-width: 1024px) {
 	.category_fun_news,
@@ -633,6 +647,9 @@ video {
 	}
 	.category_img {
 		height: 390px;
+	}
+	.content_index {
+		margin-top: -60px;
 	}
 }
 
