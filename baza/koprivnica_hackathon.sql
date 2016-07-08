@@ -3,17 +3,17 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2016 at 10:21 AM
+-- Generation Time: Jul 08, 2016 at 10:48 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
 
 drop database if exists koprivnica_hackathon;
 create database koprivnica_hackathon character set utf8 collate utf8_general_ci;
 use koprivnica_hackathon;
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -43,9 +43,20 @@ CREATE TABLE `event` (
   `finish_month` varchar(250) NOT NULL,
   `finish_year` varchar(250) NOT NULL,
   `finish_time` time DEFAULT NULL,
-  `organizer` varchar(250) NOT NULL,
-  `price` decimal(10,0) DEFAULT NULL
+  `organizer` varchar(250) DEFAULT NULL,
+  `price` decimal(10,0) DEFAULT NULL,
+  `category` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `event`
+--
+
+INSERT INTO `event` (`id`, `name`, `location`, `description`, `start_day`, `start_month`, `start_year`, `start_time`, `finish_day`, `finish_month`, `finish_year`, `finish_time`, `organizer`, `price`, `category`) VALUES
+(1, 'Istražujemo i igramo se s tabletima', 'Knjižnica i čitaonica “Fran Galović”', 'Radionica za djecu od 5 do 7 godina\r\n\r\nVoditeljice: knjižničarke u Dječjem odjelu', '08', '07', '2016', '10:00:00', '08', '07', '2016', '10:45:00', 'Knjižnica i čitaonica “Fran Galović”', NULL, 'Zabava'),
+(2, 'Program „Zdravstveni susreti pod suncobranima“', 'Knjižnica i čitaonica “Fran Galović”', 'Terasa ispred Knjižnice i čitaonice “Fran Galović” /  u slučaju lošeg vremena Čitaonica tiska\r\n\r\nU suradnji s Općom bolnicom „Dr. Tomislav Bardek“ Koprivnica\r\n\r\nTema: Perite ruke – spasite živote\r\n\r\nPredavač(i): Snježana Vuljak ,bacc.med.ses. i Anita Galinec,bacc.med.ses.', '08', '07', '2016', '10:00:00', '08', '07', '2016', NULL, 'Knjižnica i čitaonica “Fran Galović” u suradnji s Općom bolnicom „Dr. Tomislav Bardek“ Koprivnica', NULL, 'Zdravlje'),
+(3, 'Ljeto u Ludensu – Predstava Od tišine do glazbe', 'Atrij Doma mladih Koprivnica', 'Predstava Od tišine do glazbe (9. srpnja). U jednosatnom performansu dramski glumac i pijanist Jure Ivanušič atraktivno, virtuozno i žanrovski raznoliko vodi nas kroz fenomen glazbe. U svom ilustrativnom, duhovitom, a ipak muzikološko vjerodostojnom nastupu majstorski se transformira iz jedne glazbeno relevantne uloge u sljedeću; od pijanista do pjevača, od skladatelja do dirigenta, od muzikologa do glazbenog kritičara. Od kamenog doba do Rolling Stonesa, od klasike do moderne, od jazza do popa, od popevke do šansona, od uvertire do aplauza. Jure Ivanušič izvanredan je glumac i vrhunski glazbenik koji, polazeći od nekih elemenata kabarea, stvara rijetko viđenu svečanost kazališta, glazbe i humora.', '09', '07', '2016', '21:00:00', '09', '07', '2016', NULL, NULL, NULL, 'Kultura'),
+(4, 'Pričaonica za djecu predškolske dobi od 4 godine nadalje', 'Knjižnica i čitaonica “Fran Galović”', 'Čitamo priču: Čajana na mjesecu\r\n\r\nVoditeljica: Marta Jagušić, odgajateljica\r\n', '11', '07', '2016', '17:30:00', '11', '07', '2016', '18:30:00', NULL, NULL, 'Obrazovanje');
 
 -- --------------------------------------------------------
 
@@ -328,7 +339,7 @@ ALTER TABLE `streetnames`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `feedback`
 --
