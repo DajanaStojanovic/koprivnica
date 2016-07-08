@@ -1,37 +1,37 @@
 <?php include 'konfiguracija.php';?>
 
 <?php 
-$categoryFun = $veza->prepare("select *, left(description, 300) as description from event where category = 'zabava' and start_month = :currentMonth and start_year=:currentYear order by start_day desc limit 3");
+$categoryFun = $veza->prepare("select *, left(description, 200) as description from event where category = 'zabava' and start_month = :currentMonth and start_year=:currentYear order by start_day desc limit 3");
 $categoryFun->bindValue(":currentMonth", $currentMonth);
 $categoryFun->bindValue(":currentYear", $currentYear);
 $categoryFun->execute();
 $allFunEvents = $categoryFun->fetchAll(PDO::FETCH_OBJ);
 
-$categorySport = $veza->prepare("select *, left(description, 300) as description from event where category = 'sport' and start_month = :currentMonth and start_year=:currentYear order by start_day desc limit 3");
+$categorySport = $veza->prepare("select *, left(description, 200) as description from event where category = 'sport' and start_month = :currentMonth and start_year=:currentYear order by start_day desc limit 3");
 $categorySport->bindValue(":currentMonth", $currentMonth);
 $categorySport->bindValue(":currentYear", $currentYear);
 $categorySport->execute();
 $allSportEvents = $categorySport->fetchAll(PDO::FETCH_OBJ);
 
-$categoryBusiness = $veza->prepare("select *, left(description, 300) as description from event where category = 'posao' and start_month = :currentMonth and start_year=:currentYear order by start_day desc limit 3");
+$categoryBusiness = $veza->prepare("select *, left(description, 200) as description from event where category = 'posao' and start_month = :currentMonth and start_year=:currentYear order by start_day desc limit 3");
 $categoryBusiness->bindValue(":currentMonth", $currentMonth);
 $categoryBusiness->bindValue(":currentYear", $currentYear);
 $categoryBusiness->execute();
 $allBusinessEvents = $categoryBusiness->fetchAll(PDO::FETCH_OBJ);
 
-$categoryHealth = $veza->prepare("select *, left(description, 300) as description from event where category = 'zdravlje' and start_month = :currentMonth and start_year=:currentYear order by start_day desc limit 3");
+$categoryHealth = $veza->prepare("select *, left(description, 200) as description from event where category = 'zdravlje' and start_month = :currentMonth and start_year=:currentYear order by start_day desc limit 3");
 $categoryHealth->bindValue(":currentMonth", $currentMonth);
 $categoryHealth->bindValue(":currentYear", $currentYear);
 $categoryHealth->execute();
 $allHealthEvents = $categoryHealth->fetchAll(PDO::FETCH_OBJ);
 
-$categoryCulture = $veza->prepare("select *, left(description, 300) as description from event where category = 'kultura' and start_month = :currentMonth and start_year=:currentYear order by start_day desc limit 3");
+$categoryCulture = $veza->prepare("select *, left(description, 200) as description from event where category = 'kultura' and start_month = :currentMonth and start_year=:currentYear order by start_day desc limit 3");
 $categoryCulture->bindValue(":currentMonth", $currentMonth);
 $categoryCulture->bindValue(":currentYear", $currentYear);
 $categoryCulture->execute();
 $allCultureEvents = $categoryCulture->fetchAll(PDO::FETCH_OBJ);
 
-$categoryEdu = $veza->prepare("select *, left(description, 300) as description from event where category = 'obrazovanje' and start_month = :currentMonth and start_year=:currentYear order by start_day desc limit 3");
+$categoryEdu = $veza->prepare("select *, left(description, 200) as description from event where category = 'obrazovanje' and start_month = :currentMonth and start_year=:currentYear order by start_day desc limit 3");
 $categoryEdu->bindValue(":currentMonth", $currentMonth);
 $categoryEdu->bindValue(":currentYear", $currentYear);
 $categoryEdu->execute();
