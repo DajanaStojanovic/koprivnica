@@ -95,7 +95,7 @@ video {
 	position: absolute;
 	z-index: 9999;
 	top: 16px;
-	left: 70px;
+	left: 80px;
 }	
 	.register_button button {
 		color: #fff;
@@ -648,6 +648,9 @@ video {
 		color: #fff;
 		text-decoration: none;
 	}
+.single_post_content img {
+	object-fit: cover;
+}
 
 @media(max-width: 1670px) {
 	.content_index {

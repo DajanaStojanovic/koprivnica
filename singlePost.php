@@ -22,7 +22,12 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 	<div class="single_post_location">Lokacija: <strong><?php echo $singleEvent->location;?></strong></div>
 
 	<div class="single_post_day">Početak: <strong><?php echo $singleEvent->start_day . "." . $singleEvent->start_month . ".</strong> u <strong>" . $singleEvent->start_time . "</strong>  sati<br />Završetak: <strong>" . $singleEvent->finish_day . "." . $singleEvent->finish_month . ".</strong> u <strong>" . $singleEvent->finish_time;?></strong> sati</div>
-	
+		<?php if (!empty($singleEvent->price)) {
+		?>
+		    <p>Cijena događaja: <strong><?php echo $singleEvent->price;?> </strong></p>
+		<?php
+		} else { echo "Događaj je besplatan";}; ?>
+
 </div>
 	<div class="col-md-4">
 	<?php if(isset($singleEvent->pic_extension)):?>
