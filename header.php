@@ -16,9 +16,12 @@ session_start();?>
 </head>
 <body>
 
-<div class="header">
+<div class="login_button">
+  <button data-toggle="modal" data-target="#myModal"><img src="images/login.png" alt="Login" /> </button>
+</div>
 
-
+<div class="register_button">
+  <button data-toggle="modal" data-target="#myModal1">Registriraj se</button>
 </div>
 
 

@@ -17,7 +17,8 @@ body {
 .navbar-nav>li>a {
 	padding-bottom: 0;
 }
-.navbar-default .navbar-nav>li::after {
+.navbar-default .navbar-nav>li a::after,
+.register_button button::after {
 	content: '';
     display: block;
     width: 0;
@@ -25,10 +26,37 @@ body {
     background: #0178BC;
 	transition: width .3s;
 }
-.navbar-default .navbar-nav>li:hover::after {
+.navbar-default .navbar-nav>li a:hover::after,
+.register_button button:hover::after {
     width: 100%;
     //transition: width .3s;
 }
+.login_button {
+	position: absolute;
+}
+	.login_button button {
+		background-color: transparent;
+		border: none;
+	}
+		.login_button button img {
+			width: 30px;
+			position: absolute;
+			z-index: 9999;
+			height: auto;
+			left: 20px;
+		}
+
+.register_button {
+	position: absolute;
+	z-index: 9999;
+	top: 16px;
+	left: 60px;
+}	
+	.register_button button {
+		color: #fff;
+		border-color: transparent;
+		background-color: transparent;
+	}
 .video_start {
 	width: 100%;
 	height: 450px;
