@@ -9,7 +9,7 @@ body {
 	height: 100%;
 }
 video {
-	height: 70%;
+	height: 590px;
 	object-fit: cover;
 	left: 0;
 	top: 0;
@@ -602,20 +602,23 @@ video {
 	margin-top: -40px;
 	z-index: 9999;
 }
-
-@media(max-width: 1430px) {
+@media(max-width: 1670px) {
 	.content_index {
 		margin-top: -80px;
+	}
+}
+
+@media(max-width: 1520px) {
+	.content_index {
+		margin-top: -150px;
 	}
 }
 
 
 @media(max-width: 1280px) {
 	.content_index {
-		margin-top: -160px;
+		margin-top: -220px;
 	}
-}
-@media(max-width: 1024px) {
 	.category_fun_news,
 	.category_sport_news,
 	.category_health_news,
@@ -642,8 +645,10 @@ video {
 	.category_school a {
 		font-size: 35px;
 	}
+}
+@media(max-width: 1024px) {
 	video {
-		height: 50%;
+		height: 340px;
 	}
 	.category_img {
 		height: 390px;
@@ -664,9 +669,6 @@ video {
 	}
 	.content_index {
 		margin-top: -100px;
-	}
-	video {
-		height: 50%;
 	}
 	.single_day_image {
 		width: 25%;
