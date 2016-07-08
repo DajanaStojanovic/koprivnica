@@ -37,7 +37,7 @@
 			  </div>
 			  </div>
 			  
-			  <!-- AKO ŽELI SPECIFICIRATI DRUGAČIJU LOKACIJU -->
+			  <p> Ako lokacija nije navedena u izborniku gore, u izborniku ostavite na "Odaberite ulicu" i u ovo polje upišite adresu.</p>
 			  <div class="form-group">
 			   <div class="col-sm-12">
 			    	<input type="text" class="form-control" id="eventAddressCustom" placeholder="Mjesto događaja - npr. Duga ulica 7">
@@ -59,14 +59,22 @@
 			  </div>
 
 			  <p>Početak događaja: <input type="text" id="startDate"></p>
+			  <p>Od koliko sati: <input type="time" id="startTime"></p>
 			  <p>Kraj događaja: <input type="text" id="endDate"></p>
+			  <p>Do koliko sati: <input type="time" id="endTime"></p>
 			
 			<div class="form-group">
 			   <div class="col-sm-12">
 			    	<input type="number" class="form-control" id="price" placeholder="Cijena ulaza u kunama">
 			  </div>
 			  </div>
-			
+			  
+			<div class="form-group">
+			   <div class="col-sm-12">
+			    	<input type="text" class="form-control" id="url" placeholder="Vanjski izvor (poveznica)">
+			  </div>
+			  </div>
+			  
 			  <div class="form-group"> 
 			    <div class="col-sm-12">
 			      <button id="addEvent" class="btn btn-default">Dodaj događaj</button>
@@ -99,19 +107,21 @@ $("#addEvent").click(function(){
 	var organizer = "<?php echo $_SESSION["userData"]->username;?>";
 	
 	var price = $("#price").val();
+	var url= $("#url").val();
 	
 	var startDate = $("#startDate").val();
 	var startDay = startDate.split("/")[1];
 	var startMonth = startDate.split("/")[0];
 	var startYear = startDate.split("/")[2];
+	var startTime = $("#startTime").val();
 	
 	var endDate = $("#endDate").val();
 	var endDay = endDate.split("/")[1];
 	var endMonth = endDate.split("/")[0];
 	var endYear = endDate.split("/")[2];
-	
-	if(eventTitle=="" || eventDescription=="" || eventAddress=="" || startDate=="" || endDate=="" || price==""){
-		alert("Svi podaci moraju biti popunjeni");
+	var endTime = $("#endTime").val();
+	if(endTime=="" || startTime=="" || eventTitle=="" || eventDescription=="" || eventAddress=="" || startDate=="" || endDate=="" || price==""){
+		alert("Svi podaci moraju biti popunjeni osim vanjske poveznice");
 		return false;
 	}
 	if( (new Date(startDate).getTime() > new Date(endDate).getTime()))
@@ -122,7 +132,7 @@ $("#addEvent").click(function(){
 	$.ajax({
 				type: 'POST',
 				url: 'newEvent.php',
-				data: "name=" + eventTitle + "&description=" + eventDescription + "&location=" + eventAddress + "&category=" + category + "&price=" + price + "&organizer=" + organizer + "&start_day=" + startDay + "&start_month=" + startMonth + "&start_year=" +  startYear + "&finish_day=" + endDay + "&finish_month=" + endMonth + "&finish_year=" + endYear + "&pic_extension=null",
+				data: "name=" + eventTitle + "&description=" + eventDescription + "&location=" + eventAddress + "&category=" + category + "&price=" + price + "&organizer=" + organizer + "&start_day=" + startDay + "&start_month=" + startMonth + "&start_year=" +  startYear + "&finish_day=" + endDay + "&finish_month=" + endMonth + "&finish_year=" + endYear + "&pic_extension=null" + "&startTime=" + startTime + "&endTime=" + endTime,
 				dataType: 'text'
 			}).done(function(rezultat) {
 				if(rezultat!="NO"){
