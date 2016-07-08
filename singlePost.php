@@ -32,11 +32,9 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 	<?php endif;?>
 	</div>
 </div>
-<div class="row">
-	<div style="width: 80%; height: 80%;">
+	<div style="width: 75%; height: 75%;">
 		<div id="map"></div>
 	</div>
-</div>
 <?php include_once "footer.php"; ?>
 <script>
 //GOOGLE MAPS
@@ -71,4 +69,7 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 			  }
 			});
       }
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOCim7sdyd7HCXCVDAKE3p5mvufO8xkDc&callback=initMap">
 </script>
