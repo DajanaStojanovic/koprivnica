@@ -4,7 +4,7 @@ if(!$_POST && !isset($_SESSION["userData"])){
 	echo "NO";
 }
 
-$insert = $veza->prepare("update event set name=:name, location=:location, description=:description, category=:category, organizer=:organizer, price=:price, start_day=:start_day, start_month=:start_month, start_year=:start_year, finish_day=:finish_day, finish_month=:finish_month, finish_year=:finish_year, start_time=:start_time, finish_time=:finish_time");
+$insert = $veza->prepare("update event set name=:name, location=:location, description=:description, category=:category, organizer=:organizer, price=:price, start_day=:start_day, start_month=:start_month, start_year=:start_year, finish_day=:finish_day, finish_month=:finish_month, finish_year=:finish_year, start_time=:start_time, finish_time=:finish_time, url=:url");
 $insert->bindParam(":name", $_POST["name"]);
 $insert->bindParam(":location", $_POST["location"]);
 $insert->bindParam(":description", $_POST["description"]);
@@ -17,8 +17,8 @@ $insert->bindParam(":start_year", $_POST["start_year"]);
 $insert->bindParam(":finish_day", $_POST["finish_day"]);
 $insert->bindParam(":finish_month", $_POST["finish_month"]);
 $insert->bindParam(":finish_year", $_POST["finish_year"]);
-$insert->bindParam(":start_time", $_POST["start_time"]);
-$insert->bindParam(":finish_time", $_POST["finish_time"]);
+$insert->bindParam(":start_time", $_POST["startTime"]);
+$insert->bindParam(":finish_time", $_POST["endTime"]);
 $insert->bindParam(":url", $_POST["url"]);
 
 $insert->execute();
