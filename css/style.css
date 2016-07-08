@@ -2,7 +2,13 @@
 body {
 	font-family: 'Roboto', sans-serif;;
 }
-
+video {
+	height: 350px;
+	object-fit: cover;
+	left: 0;
+	top: 0;
+	z-index: -1;
+}
 .navbar {
 	background-color: transparent;
 	border-color: transparent;
@@ -44,7 +50,9 @@ body {
 .row {
 	margin: 0;
 }
-
+.content_index {
+	margin-top: 290px;
+}
 .category_img {
 	width: 100%;
 	height: 450px;
@@ -103,7 +111,11 @@ body {
 	.modal-dialog {
 		width: 400px;
 	}
-
+.locationmodal {
+	top:0;
+	right:0;
+	left:0;
+}
 /*-----------------------------*/
 .btn-default {
 	border: 2px solid #0178BC;
@@ -574,3 +586,32 @@ body {
 	.single_post_location {
 		margin-top: 20px;
 	}
+
+@media(max-width: 1024px) {
+	.category_fun_news,
+	.category_sport_news,
+	.category_health_news,
+	.category_work_news,
+	.category_culture_news,
+	.category_school_news {
+		width: 28%;
+	}
+
+	.category_fun_news h1,
+	.category_sport_news h1,
+	.category_health_news h1,
+	.category_work_news h1,
+	.category_culture_news h1,
+	.category_school_news h1 {
+		width: 90%;
+		font-size: 25px;
+	}
+	.category_fun a,
+	.category_sport a,
+	.category_health a,
+	.category_work a,
+	.category_culture a,
+	.category_school a {
+		font-size: 35px;
+	}
+}

@@ -30,12 +30,11 @@ $allDayEvents = $day->fetchAll(PDO::FETCH_OBJ);
 		<p><?php echo $events->description;?></p>
 	</div>
 	<div class="col-md-2 single_day_location">
-		<button class="btn btn-default"> Lokacija </button>
+		<button class="btn btn-default" data-toggle="modal" data-target="#myModalLokacija"> Lokacija </button>
 	</div>
 </div>
 <?php endforeach;?>
 
-
-
+<?php include_once "locationModal.php"; ?>
 
 <?php include_once "footer.php"; ?>

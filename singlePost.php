@@ -21,7 +21,7 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 	<br/>
 	<div class="single_post_location">Lokacija: <strong><?php echo $singleEvent->location;?></strong></div>
 
-	<div class="single_post_day">Vrijeme: <strong><?php echo $singleEvent->start_day . "." . $singleEvent->start_month . "., " . $singleEvent->start_time . " - " . $singleEvent->finish_day . "." . $singleEvent->finish_month . "., " . $singleEvent->finish_time;?></strong></div>
+	<div class="single_post_day">Početak: <strong><?php echo $singleEvent->start_day . "." . $singleEvent->start_month . ".</strong> u <strong>" . $singleEvent->start_time . "</strong>  sati<br />Završetak: <strong>" . $singleEvent->finish_day . "." . $singleEvent->finish_month . ".</strong> u <strong>" . $singleEvent->finish_time;?></strong> sati</div>
 	
 </div>
 	<div class="col-md-4">
@@ -30,7 +30,6 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 		<?php else:?>
 		<img src="images/placeholder.png" />
 		<?php endif;?>
-
 	</div>
 </div>
 <?php include_once "footer.php"; ?>
