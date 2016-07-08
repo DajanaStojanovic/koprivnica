@@ -787,10 +787,18 @@ width: 30%;
 	.category_culture_news,
 	.category_school_news {
 		margin: 20px 10px;
-		width: 30%;
+		width: 29%;
 	}
 	body {
 		font-size: 14px;
+	}
+	.category_fun_news p,
+	.category_sport_news p,
+	.category_health_news p,
+	.category_work_news p,
+	.category_culture_news p,
+	.category_school_news p {
+		width: 118%
 	}
 }
 
@@ -865,18 +873,23 @@ width: 30%;
 		padding: 70px 10px 30px;
 	}
 	.single_day_content {
-		min-height: 540px;
+		min-height: 650px;
 	}
 	.single_day_location .edit,
 	.single_day_location .delete {
 		left: 0;
 	}
-	.single_day_content {
-		min-height: 610px;
-	}
 	.partners {
 		width: 100%;
 		min-height: 20px;
+	}
+		.category_fun_news p,
+	.category_sport_news p,
+	.category_health_news p,
+	.category_work_news p,
+	.category_culture_news p,
+	.category_school_news p {
+		width: 100%
 	}
 }
 @media(max-width: 570px) {
