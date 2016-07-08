@@ -39,8 +39,8 @@
 	</div>
 <script>
 $("#login").click(function(){
-	var email = $("#email_login").val();
-	var password = $("#password_login").val();
+	var email = $.trim($("#email_login").val());
+	var password = $.trim($("#password_login").val());
 	$.ajax({
 				type: 'POST',
 				url: 'login.php',

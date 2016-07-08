@@ -27,6 +27,11 @@
 			   		<input type="password" class="form-control" id="password" placeholder="Lozinka *">
 				</div>
 			  </div>
+			  <div class="form-group">
+			    <div class="col-sm-12">
+			   		<input type="password" class="form-control" id="password_cfm" placeholder="Ponovljena lozinka *">
+				</div>
+			  </div>
 
 			 <div class="form-group">
 			    <div class="col-sm-12">
@@ -55,7 +60,12 @@ $("#register").click(function(){
 	var email = $.trim($("#email").val());
 	var username = $.trim($("#username").val());
 	var password = $.trim($("#password").val());
+	var password_cfm = $.trim($("#password_cfm").val());
 	var tel = $.trim($("#tel").val());
+	if(password!=password_cfm){
+		alert("Lozinke se ne podudaraju.");
+		return false;
+	}
 	if(email!="" || username!="" || password!=""){
 		$.ajax({
 				type: 'POST',
