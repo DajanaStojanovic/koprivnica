@@ -3,8 +3,9 @@ include_once 'konfiguracija.php';
 if(!$_POST){
 	echo "Polja za registraciju ne smiju biti prazna.";
 }else{
-	$login = $veza->prepare("select * from k_operater where email=:email");
+	$login = $veza->prepare("select * from k_operater where email=:email or username=:username");
 	$login->bindParam(":email", $_POST["email"]);
+	$login->bindParam(":username", $_POST["username"]);
 	$login->execute();
 	$userdata = $login->fetch(PDO::FETCH_OBJ);
 	

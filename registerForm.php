@@ -12,31 +12,31 @@
 		<form class="form-horizontal" role="form">
 			  <div class="form-group">
 			    <div class="col-sm-12">
-			    	<input type="text" class="form-control" id="username" placeholder="Korisničko ime">
+			    	<input type="text" class="form-control" id="username" placeholder="Korisničko ime *">
 			  </div>
 			  </div>
 
 			 <div class="form-group">
 			    <div class="col-sm-12">
-			   		<input type="text" class="form-control" id="email" placeholder="E-mail">
+			   		<input type="text" class="form-control" id="email" placeholder="E-mail *">
 				</div>
 			  </div>
 
 			  <div class="form-group">
 			    <div class="col-sm-12">
-			   		<input type="text" class="form-control" id="password" placeholder="Lozinka">
+			   		<input type="text" class="form-control" id="password" placeholder="Lozinka *">
 				</div>
 			  </div>
 
 			 <div class="form-group">
 			    <div class="col-sm-12">
-			   		<input type="text" class="form-control" id="tel" placeholder="Broj telefona">
+			   		<input type="phone" class="form-control" id="tel" placeholder="Broj telefona">
 				</div>
 			  </div>
 			
 			  <div class="form-group"> 
 			    <div class="col-sm-12">
-			      <button id="login" class="btn btn-default">Registriraj se!</button>
+			      <button id="register" class="btn btn-default">Registriraj se!</button>
 			    </div>
 			  </div>
 			</form>
@@ -49,3 +49,32 @@
 			</div>
 		</div>
 	</div>
+	
+<script>
+$("#register").click(function(){
+	var email = $.trim($("#email").val());
+	var username = $.trim($("#username").val());
+	var password = $.trim($("#password").val());
+	var tel = $.trim($("#tel").val());
+	if(email!="" || username!="" || password!=""){
+		$.ajax({
+				type: 'POST',
+				url: 'register.php',
+				data: "email=" + email + "&username=" + username + "&password=" + password + "&tel=" + tel,
+				dataType: 'text'
+			}).done(function(rezultat) {
+				if(rezultat=="OK"){
+					location.reload();
+				}else{
+					$("#error").html(rezultat);
+					return false;
+				}				
+			});
+	}else{
+		alert("Polja označena s * moraju biti popunjena.");
+	}
+	
+	return false;
+});
+	
+</script>

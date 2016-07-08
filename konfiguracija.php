@@ -31,3 +31,4 @@ $veza->exec("SET NAMES utf8");
 //Current month
 $now = new \DateTime('now');
 $currentMonth = $now->format('m');
+$currentYear = $now->format('y');
