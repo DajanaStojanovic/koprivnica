@@ -11,7 +11,7 @@
 		<div class="col-md-4 category_fun_news">
 			<h1>Vijest naslov</h1>
 			<p>Vijest tekst</p>
-			<a href="#">Pročitaj više...</a>
+			<a href="single_post.php">Pročitaj više...</a>
 		</div>
 
 		<div class="col-md-4 category_fun_news">
@@ -82,19 +82,64 @@
 			<a href="#">Pročitaj više...</a>
 		</div>
 
-		<div class="col-md-4 category_health_news">
+		<div class="col-md-4 category_work_news">
 			<h1>Vijest naslov</h1>
 			<p>Vijest tekst</p>
 			<a href="#">Pročitaj više...</a>
 		</div>
 
-		<div class="col-md-4 category_health_news">
+		<div class="col-md-4 category_work_news">
 			<h1>Vijest naslov</h1>
 			<p>Vijest tekst</p>
 			<a href="#">Pročitaj više...</a>
 		</div>
 	</div>
 
+
+	<div class="row">
+		<div class="category_culture">Kultura</div>
+
+		<div class="col-md-4 category_culture_news">
+			<h1>Vijest naslov</h1>
+			<p>Vijest tekst</p>
+			<a href="#">Pročitaj više...</a>
+		</div>
+
+		<div class="col-md-4 category_culture_news">
+			<h1>Vijest naslov</h1>
+			<p>Vijest tekst</p>
+			<a href="#">Pročitaj više...</a>
+		</div>
+
+		<div class="col-md-4 category_culture_news">
+			<h1>Vijest naslov</h1>
+			<p>Vijest tekst</p>
+			<a href="#">Pročitaj više...</a>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="category_school">Obrazovanje</div>
+
+		<div class="col-md-4 category_school_news">
+			<h1>Vijest naslov</h1>
+			<p>Vijest tekst</p>
+			<a href="#">Pročitaj više...</a>
+		</div>
+
+		<div class="col-md-4 category_school_news">
+			<h1>Vijest naslov</h1>
+			<p>Vijest tekst</p>
+			<a href="#">Pročitaj više...</a>
+		</div>
+
+		<div class="col-md-4 category_school_news">
+			<h1>Vijest naslov</h1>
+			<p>Vijest tekst</p>
+			<a href="#">Pročitaj više...</a>
+		</div>
+	</div>
 
 </div>
 <?php include_once "footer.php"; ?>

@@ -35,7 +35,7 @@ session_start();?>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">Nešto</a></li>
+        <li><a href="index.php">Naslovna</a></li>
         <li><a href="#">Nešto</a></li>
       	<li><a href="#">Nešto</a></li>
         <li><a href="#">Nešto</a></li>

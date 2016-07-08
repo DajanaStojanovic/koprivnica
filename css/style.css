@@ -10,6 +10,25 @@ body {
 	right: 0;
 	z-index: 9999;
 }
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>li>a:hover {
+	color: #fff;
+}
+.navbar-nav>li>a {
+	padding-bottom: 0;
+}
+.navbar-default .navbar-nav>li::after {
+	content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #0178BC;
+	transition: width .3s;
+}
+.navbar-default .navbar-nav>li:hover::after {
+    width: 100%;
+    //transition: width .3s;
+}
 .video_start {
 	width: 100%;
 	height: 450px;
@@ -26,4 +45,14 @@ body {
 	height: 450px;
 	position: relative;
 	top: 0;
+}
+
+.post_image {
+	width: 100%;
+}
+.prava {
+	text-align: center;
+	background-color: #0178BC;
+	color: #fff;
+	padding: 10px;
 }
