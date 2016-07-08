@@ -49,9 +49,9 @@ $getEvent = $event->fetch(PDO::FETCH_OBJ);
 			  </div>
 
 			  <p>Početak događaja: <input type="text" class="form-control date" id="startDate" value="<?php echo $getEvent->start_month . "/" . $getEvent->start_day . "/" . $getEvent->start_year ;?>"></p>
-			  <p>Od koliko sati: <input type="time" class="form-control date" id="startTime" value="<?php echo $getEvent->start_time;?>"></p>
+			  <p>Od koliko sati: <input type="number" class="form-control date" id="startTime" min="0" max="23" value="<?php echo $getEvent->start_time;?>"></p>
 			  <p>Kraj događaja: <input type="text" class="form-control date" id="endDate" value="<?php echo $getEvent->finish_month . "/" . $getEvent->finish_day . "/" . $getEvent->finish_year ;?>"></p>
-			  <p>Do koliko sati: <input type="time" class="form-control date" id="endTime" value="<?php echo $getEvent->finish_time;?>"></p>
+			  <p>Do koliko sati: <input type="number" class="form-control date" id="endTime" min="0" max="24" value="<?php echo $getEvent->finish_time;?>"></p>
 			
 			<div class="form-group">
 			   <div class="col-sm-12">
@@ -112,6 +112,10 @@ $("#addEvent").click(function(){
 	if( (new Date(startDate).getTime() > new Date(endDate).getTime()))
 	{
 		alert("Datum završetka događaja ne može biti ispred početka događaja!");
+		return false;
+	}
+	if(startTime >= 24 || endTime > 24){
+		alert("Vrijeme početka ili završetka nisu pravilno unešeni.");
 		return false;
 	}
 	$.ajax({
