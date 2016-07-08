@@ -8,6 +8,7 @@ body {
 	width: 100%;
 	height: 100%;
 	font-size: 16px;
+	min-height: 100%;
 }
 video {
 	height: 590px;
@@ -650,6 +651,7 @@ width: 30%;
 	padding: 20px;
 	background-color: #0178BC;
 	min-height: 170px;
+	z-index: 9999;
 }
 	.partners img {
 		width: 100px;
@@ -753,6 +755,9 @@ width: 30%;
 	.single_post_content img {
 		margin-top: 20px;
 	}
+	.partners img {
+		width: 70px;
+	}
 }
 
 @media(max-width: 900px) {
@@ -844,9 +849,26 @@ width: 30%;
 		font-size: 30px;
 		padding: 70px 10px 30px;
 	}
-
+	.single_day_content {
+		min-height: 540px;
+	}
+	.single_day_location .edit,
+	.single_day_location .delete {
+		left: 0;
+	}
+	.single_day_content {
+		min-height: 610px;
+	}
+	.partners {
+		width: 100%;
+		min-height: 20px;
+	}
 }
-
+@media(max-width: 570px) {
+	.single_day_content {
+		min-height: 590px;
+	}
+}
 @media(max-width: 500px) {
 	.category_fun_news,
 	.category_sport_news,

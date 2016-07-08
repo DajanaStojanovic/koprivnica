@@ -1,11 +1,11 @@
 <div class="footer">
-<div class="partners col-md-6">
+<div class="partners col-md-6 col-sm-6 col-xs-6">
 		<a href="http://koprivnica.hr/"><img src="images/grb.png" /></a>
 		<a href="http://www.komunalac-kc.hr/"><img src="images/komunalac.png" /></a>
 		<a href="https://www.instagram.com/explore/locations/237078289/"><img src="images/insta.png" /></a>
 		<a href="https://www.facebook.com/grad.koprivnica.1/?fref=ts"><img src="images/face.png" /></a>
 </div>
-<div class="partners col-md-6">
+<div class="partners col-md-6 col-sm-6 col-xs-6">
  <p>Adresa:<strong>Zrinski trg 1, 48000 Koprivnica</strong></p>
 	<p>tel:<strong>+385 48 279 555</strong></p>
 	<p>fax:<strong>+385 48 279 543</strong></p>
