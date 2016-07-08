@@ -8,19 +8,22 @@ $allDayEvents = $day->fetchAll(PDO::FETCH_OBJ);
 ?>
 <?php include_once "header.php"; ?>
 
-<div class="single_day_header">
+<div class="single_day_header" style="text-align: center;">
 	<p><?php echo $_GET["day"] . "." . $currentMonth . ".";?></p>
-	<hr/>
-	<small> Kategorija: <?php echo $_GET["cat"];?> </small>
+	<hr width="30%"/>
+	 Kategorija: <?php echo $_GET["cat"];?>
 </div>
 <?php foreach($allDayEvents as $events):?>
 <div class="single_day_content row">
 	<div class="col-md-3">
-		Slika eventa
+		<h3> <?php echo $event->name;?> </h3>
 	</div>
 
-	<div class="col-md-9">
-		Opis eventa
+	<div class="col-md-6">
+		<?php echo $event->description;?>
+	</div>
+	<div class="col-md-3">
+		<button> Lokacija </button>
 	</div>
 </div>
 <?php endforeach;?>
