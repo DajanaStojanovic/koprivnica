@@ -41,6 +41,12 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 		<div class="category_fun"><a href="singleCategory.php?cat=Zabava">Zabava</a></div>
 		<?php foreach($allFunEvents as $fun):?>
 		<div class="col-md-4 category_fun_news">
+		
+		<!-- SLIKA - prilagodi si isset i echo-e-->
+		<?php if(isset($fun->pic_extension)):?>
+			<img src="<?php echo $put;?>/images/<?php echo $fun->id . "." . $fun->pic_extension;?>" />
+		<?php endif;?>
+		
 			<h1><?php echo $fun->name;?></h1>
 			<p><?php echo $fun->description;?></p>
 			<a href="singlePost.php?id=<?php echo $fun->id;?>">Pročitaj više...</a>
