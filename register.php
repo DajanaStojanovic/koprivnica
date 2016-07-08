@@ -11,7 +11,7 @@ if(!$_POST){
 	
 	if($userdata==null){
 		$password = md5($_POST["password"]);
-		$register = $veza->prepare("insert into operater (username, email, password, tel, type) values (:username, :email, :password, :tel, 0");
+		$register = $veza->prepare("insert into operater(username, email, password, tel, type) values (:username, :email, :password, :tel, 0)");
 		$register->bindParam(":username", $_POST["username"]);
 		$register->bindParam(":email", $_POST["email"]);
 		$register->bindParam(":password", $password);

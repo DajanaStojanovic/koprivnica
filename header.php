@@ -15,7 +15,7 @@ session_start();?>
 
 </head>
 <body>
-
+<?php if(!isset($_SESSION["userData"])):?>
 <div class="login_button">
   <button data-toggle="modal" data-target="#myModal">Prijavi se</button>
 </div>
@@ -23,6 +23,11 @@ session_start();?>
 <div class="register_button">
   <button data-toggle="modal" data-target="#myModal1">Registriraj se</button>
 </div>
+<?php else:?>
+<div class="login_button">
+  <a href="<?php echo $put;?>odjava.php"><button>Odjava</button></a>
+</div>
+<?php endif;?>
 
 
 <nav class="navbar navbar-default">

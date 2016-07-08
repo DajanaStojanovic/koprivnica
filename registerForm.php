@@ -24,7 +24,7 @@
 
 			  <div class="form-group">
 			    <div class="col-sm-12">
-			   		<input type="text" class="form-control" id="password" placeholder="Lozinka *">
+			   		<input type="password" class="form-control" id="password" placeholder="Lozinka *">
 				</div>
 			  </div>
 

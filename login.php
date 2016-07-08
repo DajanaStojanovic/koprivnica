@@ -5,7 +5,7 @@ if(!$_POST){
 }else{
 	$password = md5($_POST["password"]);
 	$login = $veza->prepare("select * from operater where email=:email and password=:password");
-	$login->bindParam(":email", $_POST["korisnickoime"]);
+	$login->bindParam(":email", $_POST["email"]);
 	$login->bindParam(":password", $password);
 	$login->execute();
 	$userdata = $login->fetch(PDO::FETCH_OBJ);

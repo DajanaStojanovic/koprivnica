@@ -9,27 +9,26 @@
       </div>
       
     <div class="modal-body">
-		<form class="form-horizontal" role="form">
 			  <div class="form-group">
 			    <div class="col-sm-12">
-			    	<input type="text" class="form-control" id="email" placeholder="E-mail">
+			    	<input type="text" class="form-control" id="email_login" placeholder="E-mail">
 			  </div>
 			  </div>
 
 			 <div class="form-group">
 			    <div class="col-sm-12">
-			   		<input type="password" class="form-control" id="password" placeholder="Password">
+			   		<input type="password" class="form-control" id="password_login" placeholder="Password">
 				</div>
 			  </div>
 
 			
 			  <div class="form-group"> 
 			    <div class="col-sm-12">
-			      <button id="login" class="btn btn-default">Log in</button>
+			      <button id="login" class="btn btn-default">Prijava</button>
 			    </div>
 			  </div>
 			</form>
-			<p id="error"></p>
+			<p id="error_login"></p>
 	</div>
 	
 		<div class="modal-footer">
@@ -40,8 +39,8 @@
 	</div>
 <script>
 $("#login").click(function(){
-	var email = $.trim($("#email").val());
-	var password = $.trim($("#password").val());
+	var email = $("#email_login").val();
+	var password = $("#password_login").val();
 	$.ajax({
 				type: 'POST',
 				url: 'login.php',
@@ -51,8 +50,8 @@ $("#login").click(function(){
 				if(rezultat=="OK"){
 					location.reload();
 				}else{
-					$("#error").html(rezultat);
-					return false;
+					$("#error_login").empty();
+					$("#error_login").html(rezultat);
 				}				
 			});
 	return false;
