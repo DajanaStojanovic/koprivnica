@@ -1,6 +1,5 @@
 /*CSS*/
-html,
-#map {
+html {
 	width: 100%;
 	height: 100%;
 }
@@ -591,7 +590,11 @@ video {
 	.single_post_location {
 		margin-top: 20px;
 	}
-
+#map {
+	width: 100%;
+	height: 100%;
+	left: 16%;
+}
 @media(max-width: 1024px) {
 	.category_fun_news,
 	.category_sport_news,
@@ -652,5 +655,29 @@ video {
 	.category_school_news {
 		margin: 20px 10px;
 		width: 30%;
+	}
+}
+
+@media(max-width: 800px) {
+	video {
+		height: 40%;
+	}
+}
+
+@media(max-width: 767px) {
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+		background-color: rgba(1, 120, 188, 0.8);
+	}
+	.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+		background-color: rgba(1, 120, 188, 0.5);
+	}
+	.navbar-default .navbar-toggle .icon-bar {
+		background-color: rgba(1, 120, 188, 1);
+	}
+	.navbar-default .navbar-toggle {
+		border-color: rgba(1, 120, 188, 1);
+	}
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+		border-color: transparent;
 	}
 }
