@@ -158,6 +158,9 @@ body {
 			min-height: 300px;
 		}
 
+			.category_fun_news a {
+				text-decoration: none;
+			}
 			.category_fun_news h1 {
 				padding: 10px;
 				background-color: rgba(1, 79, 124, 0.8);
@@ -173,7 +176,7 @@ body {
 				padding: 10px;
 			}
 
-			.category_fun_news a {
+			.category_fun_news .more {
 				background-color: rgba(1, 79, 124, 0.8);
 				color: #fff;
 				padding: 10px;
@@ -182,7 +185,7 @@ body {
 				bottom: 10px;
 				text-decoration: none;
 			}
-			.category_fun_news a::after {
+			.category_fun_news .more::after {
 				content: '';
 			    display: block;
 			    width: 0;
@@ -190,7 +193,7 @@ body {
 			    background: #fff;
 				transition: width .3s;
 			}
-			.category_fun_news a:hover::after {
+			.category_fun_news .more:hover::after {
 			    width: 100%;
 			    //transition: width .3s;
 			}
@@ -214,6 +217,10 @@ body {
 			min-height: 300px;
 		}
 
+			.category_sport_news a {
+				text-decoration: none;
+			}
+
 			.category_sport_news h1 {
 				padding: 10px;
 				background-color: rgba(1, 128, 201, 0.8);
@@ -229,7 +236,7 @@ body {
 				padding: 10px;
 			}
 
-			.category_sport_news a {
+			.category_sport_news .more {
 				background-color: rgba(1, 128, 201, 0.8);
 				color: #fff;
 				padding: 10px;
@@ -238,7 +245,7 @@ body {
 				text-decoration: none;
 				bottom: 10px;
 			}
-			.category_sport_news a::after {
+			.category_sport_news .more::after {
 				content: '';
 			    display: block;
 			    width: 0;
@@ -246,7 +253,7 @@ body {
 			    background: #fff;
 				transition: width .3s;
 			}
-			.category_sport_news a:hover::after {
+			.category_sport_news .more:hover::after {
 			    width: 100%;
 			    //transition: width .3s;
 			}
@@ -268,7 +275,9 @@ body {
 			width: 30%;
 			min-height: 300px;
 		}
-
+			.category_health_news a {
+				text-decoration: none;
+			}
 			.category_health_news h1 {
 				padding: 10px;
 				background-color: rgba(1, 104, 162, 0.8);
@@ -284,7 +293,7 @@ body {
 				padding: 10px;
 			}
 
-			.category_health_news a {
+			.category_health_news .more {
 				background-color: rgba(1, 104, 162, 0.8);
 				color: #fff;
 				padding: 10px;
@@ -293,7 +302,7 @@ body {
 				text-decoration: none;
 				bottom: 10px;
 			}
-			.category_health_news a::after {
+			.category_health_news .more::after {
 				content: '';
 			    display: block;
 			    width: 0;
@@ -301,7 +310,7 @@ body {
 			    background: #fff;
 				transition: width .3s;
 			}
-			.category_health_news a:hover::after {
+			.category_health_news .more:hover::after {
 			    width: 100%;
 			    //transition: width .3s;
 			}
@@ -325,7 +334,9 @@ body {
 			width: 30%;
 			min-height: 300px;
 		}
-
+			.category_work_news a {
+				text-decoration: none;
+			}
 			.category_work_news h1 {
 				padding: 10px;
 				background-color: rgba(0, 39, 60, 0.8);
@@ -341,7 +352,7 @@ body {
 				padding: 10px;
 			}
 
-			.category_work_news a {
+			.category_work_news .more {
 				background-color: rgba(0, 39, 60, 0.8);
 				color: #fff;
 				padding: 10px;
@@ -350,7 +361,7 @@ body {
 				text-decoration: none;
 				bottom: 10px;
 			}
-			.category_work_news a::after {
+			.category_work_news .more::after {
 				content: '';
 			    display: block;
 			    width: 0;
@@ -358,7 +369,7 @@ body {
 			    background: #fff;
 				transition: width .3s;
 			}
-			.category_work_news a:hover::after {
+			.category_work_news .more:hover::after {
 			    width: 100%;
 			    //transition: width .3s;
 			}
@@ -381,7 +392,9 @@ body {
 			width: 30%;
 			min-height: 300px;
 		}
-
+			.category_çulture_news a {
+				text-decoration: none;
+			}
 			.category_culture_news h1 {
 				padding: 10px;
 				background-color: rgba(5, 147, 201, 0.8);
@@ -397,7 +410,7 @@ body {
 				padding: 10px;
 			}
 
-			.category_culture_news a {
+			.category_culture_news .more {
 				background-color: rgba(5, 147, 201, 0.8);
 				color: #fff;
 				padding: 10px;
@@ -406,7 +419,7 @@ body {
 				text-decoration: none;
 				bottom: 10px;
 			}
-			.category_culture_news a::after {
+			.category_culture_news .more::after {
 				content: '';
 			    display: block;
 			    width: 0;
@@ -414,7 +427,7 @@ body {
 			    background: #fff;
 				transition: width .3s;
 			}
-			.category_culture_news a:hover::after {
+			.category_culture_news .more:hover::after {
 			    width: 100%;
 			    //transition: width .3s;
 			}
@@ -438,7 +451,9 @@ body {
 			width: 30%;
 			min-height: 300px;
 		}
-
+			.category_sçhool_news a {
+				text-decoration: none;
+			}
 
 			.category_school_news h1 {
 				padding: 10px;
@@ -455,7 +470,7 @@ body {
 				padding: 10px;
 			}
 
-			.category_school_news a {
+			.category_school_news .more {
 				background-color: rgba(15, 68, 138, 0.8);
 				color: #fff;
 				padding: 10px;
@@ -464,7 +479,7 @@ body {
 				text-decoration: none;
 				bottom: 10px;
 			}
-			.category_school_news a::after {
+			.category_school_news .more::after {
 				content: '';
 			    display: block;
 			    width: 0;
@@ -472,7 +487,7 @@ body {
 			    background: #fff;
 				transition: width .3s;
 			}
-			.category_school_news a:hover::after {
+			.category_school_news .more:hover::after {
 			    width: 100%;
 			    //transition: width .3s;
 			}
