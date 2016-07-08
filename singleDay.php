@@ -31,9 +31,36 @@ $allDayEvents = $day->fetchAll(PDO::FETCH_OBJ);
 	</div>
 	<div class="col-md-2 single_day_location">
 		<a target="_blank" href="singlePost.php?id=<?php echo $events->id;?>#mapwrap"><button class="btn btn-default"> Lokacija </button></a>
+		<?php if(isset($_SESSION["userData"])):
+			if($_SESSION["userData"]->type==1 || $_SESSION["userData"]->id==$events->id):
+		?>
+		<button class="btn btn-default delete" id="<?php echo $events->id;?>"> Obriši </button>
+		<a href="editPost.php?id=<?php echo $events->id;?>"><button class="btn btn-default">Uredi</button></a>
+		<?php endif; 
+		endif;?>
 	</div>
 </div>
 <?php endforeach;?>
 
 
 <?php include_once "footer.php"; ?>
+
+<script>
+$(".delete").click(function(){
+	var id = $(this).attr("id");
+	var element = $(this);
+	$.ajax({
+				type: 'POST',
+				url: 'deletePost.php',
+				data: "id=" + id,
+				dataType: 'text'
+			}).done(function(rezultat) {
+				if(rezultat=="OK"){
+					element.parent().parent().remove();
+				}else{
+					alert("Došlo je do pogreške, pokušajte ponovo");
+				}			
+			});
+});
+
+</script>
