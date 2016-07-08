@@ -26,7 +26,7 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 </div>
 	<div class="col-md-4">
 	<?php if(isset($singleEvent->pic_extension)):?>
-		<img src="<?php echo $put;?>images/<?php echo $singleEvent->id;?>.<?php echo $singleEvent->pic_extension;?>" alt="Slika vijesti" class="img-responsive post_image" /> 
+		<img src="<?php echo $put;?>images/<?php echo $singleEvent->pic_extension;?>" alt="Slika vijesti" class="img-responsive post_image" /> 
 		<?php else:?>
 		<img src="images/placeholder.png" />
 	<?php endif;?>
