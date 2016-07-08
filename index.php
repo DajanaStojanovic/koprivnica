@@ -46,11 +46,13 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 <div class="content_index">
 
 	<div class="row">
-		<div class="category_fun"><a href="singleCategory.php?cat=Zabava">Zabava</a></div>
+		<div class="category_fun"><a href="singleCategory.php?cat=Zabava"><strong>Zabava</strong></a><hr class="style-one"></div>
 		<?php foreach($allFunEvents as $fun):?>
 		<div class="col-md-4 category_fun_news">
 		<?php if(isset($fun->pic_extension)):?>
 			<img src="<?php echo $put;?>/images/<?php echo $fun->pic_extension;?>" class="news_image" />
+		<?php else: ?>
+			<img src="images/placeholder.jpg" class="news_image" />
 		<?php endif;?>
 		
 			<a href="singlePost.php?id=<?php echo $fun->id;?>"><h1><?php echo $fun->name;?></h1></a>
@@ -62,12 +64,14 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 
 
 	<div class="row">
-		<div class="category_sport"><a href="singleCategory.php?cat=Sport">Sport</a></div>
+		<div class="category_sport"><a href="singleCategory.php?cat=Sport"><strong>Sport</strong></a><hr class="style-one"></div>
 		<?php foreach($allSportEvents as $sport):?>
 		<div class="col-md-4 category_sport_news">
 
 		<?php if(isset($sport->pic_extension)):?>
 			<img src="<?php echo $put;?>/images/<?php echo $sport->pic_extension;?>" class="news_image" />
+		<?php else: ?>
+			<img src="images/placeholder.jpg" class="news_image" />
 		<?php endif;?>
 			<a href="singlePost.php?id=<?php echo $sport->id;?>"><h1><?php echo $sport->name;?></h1></a>
 			<p><?php echo $sport->description;?>...</p>
@@ -77,11 +81,13 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 	</div>
 
 	<div class="row">
-		<div class="category_health"><a href="singleCategory.php?cat=Zdravlje">Zdravlje</a></div>
+		<div class="category_health"><a href="singleCategory.php?cat=Zdravlje"><strong>Zdravlje</strong></a><hr class="style-one"></div>
 		<?php foreach($allHealthEvents as $health):?>
 		<div class="col-md-4 category_health_news">
 		<?php if(isset($health->pic_extension)):?>
 			<img src="<?php echo $put;?>/images/<?php echo $health->pic_extension;?>" class="news_image" />
+		<?php else: ?>
+			<img src="images/placeholder.jpg" class="news_image" />		
 		<?php endif;?>
 			<a href="singlePost.php?id=<?php echo $health->id;?>"><h1><?php echo $health->name;?></h1></a>
 			<p><?php echo $health->description;?>...</p>
@@ -91,11 +97,13 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 	</div>
 
 	<div class="row">
-		<div class="category_work"><a href="singleCategory.php?cat=Posao">Posao</a></div>
+		<div class="category_work"><a href="singleCategory.php?cat=Posao"><strong>Posao</strong></a><hr class="style-one"></div>
 		<?php foreach($allBusinessEvents as $work):?>
 		<div class="col-md-4 category_work_news">
 		<?php if(isset($work->pic_extension)):?>
 			<img src="<?php echo $put;?>/images/<?php echo $work->pic_extension;?>" class="news_image" />
+		<?php else: ?>
+			<img src="images/placeholder.jpg" class="news_image" />		
 		<?php endif;?>
 			<a href="singlePost.php?id=<?php echo $work->id;?>"><h1><?php echo $work->name;?></h1></a>
 			<p><?php echo $work->description;?>...</p>
@@ -106,11 +114,13 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 
 
 	<div class="row">
-		<div class="category_culture"><a href="singleCategory.php?cat=Kultura">Kultura</a></div>
+		<div class="category_culture"><a href="singleCategory.php?cat=Kultura"><strong>Kultura</strong></a><hr class="style-one"></div>
 		<?php foreach($allCultureEvents as $cult):?>
 		<div class="col-md-4 category_culture_news">
 		<?php if(isset($cult->pic_extension)):?>
 			<img src="<?php echo $put;?>/images/<?php echo $cult->pic_extension;?>" class="news_image" />
+		<?php else: ?>
+			<img src="images/placeholder.jpg" class="news_image" />		
 		<?php endif;?>
 			<a href="singlePost.php?id=<?php echo $cult->id;?>"><h1><?php echo $cult->name;?></h1></a>
 			<p><?php echo $cult->description;?>...</p>
@@ -121,11 +131,13 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 
 
 	<div class="row">
-		<div class="category_school"><a href="singleCategory.php?cat=Obrazovanje">Obrazovanje</a></div>
+		<div class="category_school"><a href="singleCategory.php?cat=Obrazovanje"><strong>Obrazovanje</strong></a><hr class="style-one"></div>
 		<?php foreach($allEduEvents as $edu):?>
 		<div class="col-md-4 category_school_news">
 		<?php if(isset($edu->pic_extension)):?>
 			<img src="<?php echo $put;?>/images/<?php echo $edu->pic_extension;?>" class="news_image" />
+		<?php else: ?>
+			<img src="images/placeholder.jpg" class="news_image" />		
 		<?php endif;?>
 			<a href="singlePost.php?id=<?php echo $edu->id;?>"><h1><?php echo $edu->name;?></h1></a>
 			<p><?php echo $edu->description;?>...</p>

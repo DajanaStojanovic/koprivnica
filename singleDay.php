@@ -20,7 +20,7 @@ $allDayEvents = $day->fetchAll(PDO::FETCH_OBJ);
 			<img src="<?php echo $put;?>images/<?php echo $events->pic_extension;?>" />
 
 		<?php else:?>
-			<img src="images/placeholder.png" />
+			<img src="images/placeholder.jpg" />
 		<?php endif;?>
 		
 	</div>
