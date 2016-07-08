@@ -12,10 +12,10 @@ $prefix="eclat";
 //lokalno
 
 $mysql_host = "localhost";
-$mysql_database = "koprivnica_stakori";
+$mysql_database = "koprivnica_hackathon";
 $mysql_user = "root";
 $mysql_password = "";
-$put="/koprivnica_pripreme/";
+$put="/koprivnica/";
 
 
 //spajanje na bazu
