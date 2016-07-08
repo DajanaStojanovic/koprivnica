@@ -1,12 +1,18 @@
 <?php include 'konfiguracija.php';?>
-<?php include_once "header.php"; ?>
-<?php if(!isset($_SESSION["userData"])){
-	header("location: odjava.php");
-}
+<?php include_once "header.php";
+
 $event = $veza->prepare("select * from event where id=:id");
 $event->bindParam(":id", $_GET["id"]);
 $event->execute();
 $getEvent = $event->fetch(PDO::FETCH_OBJ);
+
+ if(!isset($_SESSION["userData"])){
+	header("location: odjava.php");
+}else{
+	if($_SESSION["userData"]->type!=1 || $_SESSION["userData"]->id!=$getEvent->id){
+		header("location: odjava.php");
+	}
+}
 ?>
 <div class="row content">
 
