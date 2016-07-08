@@ -38,10 +38,14 @@ $categoryEdu->execute();
 $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 ?>
 <?php include_once "header.php"; ?>
+	<div class="index_naslov">Koprivnica life</div>
 
 <video autoplay muted loop style="width: 100%">
 	<source src="images/video.mp4" type="video/mp4">
+
 </video>
+
+
 
 <div class="content_index">
 

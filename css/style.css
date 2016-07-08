@@ -664,6 +664,17 @@ width: 30%;
 .footer {
 	text-align: center;
 }
+.index_naslov {
+	text-align: center;
+    padding-top: 130px;
+    font-size: 90px;
+    top: 20px;
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 @media(max-width: 1800px) {
 	.content_index {
 		margin-top: 0;
