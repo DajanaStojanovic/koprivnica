@@ -17,7 +17,7 @@ $allDayEvents = $day->fetchAll(PDO::FETCH_OBJ);
 <div class="single_day_content row">
 	<div class="col-md-3 single_day_image">
 		<?php if(isset($events->pic_extension)):?>
-			<img src="<?php echo $put;?>/images/<?php echo $events->id . "." . $events->pic_extension;?>" />
+			<img src="<?php echo $put;?>images/<?php echo $events->pic_extension;?>" />
 
 		<?php else:?>
 			<img src="images/placeholder.png" />
