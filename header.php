@@ -12,6 +12,7 @@ session_start();?>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="<?php echo $put;?>js/bootstrap.min.js" type="text/javascript"></script>
+    <link rel="shortcut icon" href="<?php echo $put;?>images/favicon.ico">
 
 </head>
 <body>
