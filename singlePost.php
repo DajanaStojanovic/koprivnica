@@ -33,8 +33,7 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 	</div>
 </div>
 <div class="row" id="location">
-	<h1> Lokacija događaja </h1>
-	<hr/>
+	<h1 class="single_post_location_title"> Lokacija događaja </h1>
 </div>
 
 	<div id="mapwrap" style="width: 75%; height: 75%;">

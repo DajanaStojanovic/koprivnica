@@ -35,7 +35,7 @@ $allDayEvents = $day->fetchAll(PDO::FETCH_OBJ);
 			if($_SESSION["userData"]->type==1 || $_SESSION["userData"]->id==$events->id):
 		?>
 		<button class="btn btn-default delete" id="<?php echo $events->id;?>"> Obriši </button>
-		<a href="editPost.php?id=<?php echo $events->id;?>"><button class="btn btn-default">Uredi</button></a>
+		<a href="editEvent.php?id=<?php echo $events->id;?>"><button class="btn btn-default edit">Uredi</button></a>
 		<?php endif; 
 		endif;?>
 	</div>

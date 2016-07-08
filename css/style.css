@@ -154,6 +154,7 @@ video {
 		min-height: 150px;
 		height: 100%;
 		width: 100%;
+		object-fit: cover;
 	}
 	.single_day_location {
 		min-height: 150px;
@@ -168,7 +169,16 @@ video {
 		position: absolute;
 		right: 80px;
 		bottom: 0;
+		width: 80px;
 	}
+		.single_day_location .delete {
+			top: 0;
+			bottom: inherit;
+		}
+		.single_day_location .edit {
+			top: 40px;
+			bottom: inherit;
+		}
 	.single_day_description a {
 		text-decoration: none;
 		color: #0178BC;
@@ -594,6 +604,12 @@ video {
 	}
 	.single_post_location {
 		margin-top: 20px;
+	}
+	.single_post_location_title {
+		text-align: center;
+		background-color: #0178BC;
+		color: #fff;
+		padding: 10px;
 	}
 #map {
 	width: 100%;
