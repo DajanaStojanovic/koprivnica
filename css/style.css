@@ -823,6 +823,10 @@ width: 30%;
 	.single_post h1 {
 		padding-top: 90px;
 	}
+	.index_naslov {
+		padding-top: 60px;
+		font-size: 60px;
+	}
 }
 
 @media(max-width: 640px) {
@@ -905,6 +909,12 @@ width: 30%;
 	.category_culture_news,
 	.category_school_news {
 		width: 88%;
+	}
+	.index_naslov {
+		font-size: 45px;
+		padding-top: 50px;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 }
 
