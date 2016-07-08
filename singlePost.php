@@ -29,8 +29,47 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 		<img src="<?php echo $put;?>images/<?php echo $singleEvent->id;?>.<?php echo $singleEvent->pic_extension;?>" alt="Slika vijesti" class="img-responsive post_image" /> 
 		<?php else:?>
 		<img src="images/placeholder.png" />
-		<?php endif;?>
+	<?php endif;?>
 
 	</div>
 </div>
+<div class="row">
+	<div style="width: 80%; height: 80%;">
+		<div id="map"></div>
+	</div>
+</div>
 <?php include_once "footer.php"; ?>
+<script>
+//GOOGLE MAPS
+	function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: {lat: 46.164114, lng: 16.830127}
+        });
+        var geocoder = new google.maps.Geocoder();
+			geocodeAddress(geocoder, map);
+          
+
+      }
+
+      function geocodeAddress(geocoder, resultsMap) {
+		  <?php 
+		  $location = $veza->prepare("select location from event where id=:id");
+		  $location->bindParam(":id", $_GET["id"]);
+		  $location->execute();
+		  $marker = $location->fetchColumn();
+		  ?>
+			var address = "<?php echo $marker;?>";
+				geocoder.geocode({'address': address}, function(results, status) {
+			  if (status === google.maps.GeocoderStatus.OK) {
+				resultsMap.setCenter(results[0].geometry.location);
+				var marker = new google.maps.Marker({
+				  map: resultsMap,
+				  position: results[0].geometry.location
+				});
+			  } else {
+				alert('Geocode was not successful for the following reason: ' + status);
+			  }
+			});
+      }
+</script>
