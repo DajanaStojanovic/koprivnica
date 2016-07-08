@@ -47,7 +47,7 @@ $allEvents = $events->fetchAll(PDO::FETCH_OBJ);
 								}
 							endforeach;
 				?>
-				<a href="<?php echo $put;?>singleDay.php?day=<?php echo $day;?>">
+				<a href="<?php echo $put;?>singleDay.php?day=<?php echo $day;?>&cat=<?php echo $_GET["cat"];?>">
 					<div class="col-xs-4 col-md-2 col-lg-1" 
 					style="background-color: <?php if($numberOfEvents==0){ echo "white";}else{ echo "#0178BC";}?>
 					; border: 1px solid blue; text-align: center;">
