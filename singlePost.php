@@ -37,7 +37,7 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 	<hr/>
 </div>
 
-	<div style="width: 75%; height: 75%;">
+	<div id="mapwrap" style="width: 75%; height: 75%;">
 		<div id="map"></div>
 	</div>
 	<br/>
@@ -72,6 +72,7 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 				});
 			  } else {
 				$("#location").hide();
+				$("#mapwrap").hide();
 				$("#map").hide();
 			  }
 			});
