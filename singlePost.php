@@ -32,7 +32,7 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 	<?php endif;?>
 	</div>
 </div>
-<div class="row">
+<div class="row" id="location">
 	<h1> Lokacija događaja </h1>
 	<hr/>
 </div>
@@ -71,7 +71,8 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 				  position: results[0].geometry.location
 				});
 			  } else {
-				alert('Geocode was not successful for the following reason: ' + status);
+				$("#location").hide();
+				$("#map").hide();
 			  }
 			});
       }
