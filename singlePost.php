@@ -32,9 +32,15 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 	<?php endif;?>
 	</div>
 </div>
+<div class="row">
+	<h1> Lokacija događaja </h1>
+	<hr/>
+</div>
+
 	<div style="width: 75%; height: 75%;">
 		<div id="map"></div>
 	</div>
+	<br/>
 <?php include_once "footer.php"; ?>
 <script>
 //GOOGLE MAPS
