@@ -35,6 +35,5 @@ $allDayEvents = $day->fetchAll(PDO::FETCH_OBJ);
 </div>
 <?php endforeach;?>
 
-<?php include_once "locationModal.php"; ?>
 
 <?php include_once "footer.php"; ?>

@@ -51,13 +51,10 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 		<div class="col-md-4 category_fun_news">
 		<?php if(isset($fun->pic_extension)):?>
 			<img src="<?php echo $put;?>/images/<?php echo $fun->id . "." . $fun->pic_extension;?>" class="news_image" />
-
-		<?php else:?>
-			<img src="images/placeholder.png" class="news_image" />
 		<?php endif;?>
 		
 			<a href="singlePost.php?id=<?php echo $fun->id;?>"><h1><?php echo $fun->name;?></h1></a>
-			<p><?php echo $fun->description;?></p>
+			<p><?php echo $fun->description;?>...</p>
 			<a href="singlePost.php?id=<?php echo $fun->id;?>" class="more">Pročitaj više...</a>
 		</div>
 		<?php endforeach;?>
@@ -71,12 +68,9 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 
 		<?php if(isset($fun->pic_extension)):?>
 			<img src="<?php echo $put;?>/images/<?php echo $fun->id . "." . $fun->pic_extension;?>" class="news_image" />
-
-		<?php else:?>
-			<img src="images/placeholder.png" class="news_image" />
 		<?php endif;?>
 			<a href="singlePost.php?id=<?php echo $sport->id;?>"><h1><?php echo $sport->name;?></h1></a>
-			<p><?php echo $sport->description;?></p>
+			<p><?php echo $sport->description;?>...</p>
 			<a href="singlePost.php?id=<?php echo $sport->id;?>" class="more">Pročitaj više...</a>
 		</div>
 		<?php endforeach;?>
@@ -88,12 +82,9 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 		<div class="col-md-4 category_health_news">
 		<?php if(isset($fun->pic_extension)):?>
 			<img src="<?php echo $put;?>/images/<?php echo $fun->id . "." . $fun->pic_extension;?>" class="news_image" />
-
-		<?php else:?>
-			<img src="images/placeholder.png" class="news_image" />
 		<?php endif;?>
 			<a href="singlePost.php?id=<?php echo $health->id;?>"><h1><?php echo $health->name;?></h1></a>
-			<p><?php echo $health->description;?></p>
+			<p><?php echo $health->description;?>...</p>
 			<a href="singlePost.php?id=<?php echo $health->id;?>" class="more">Pročitaj više...</a>
 		</div>
 		<?php endforeach;?>
@@ -105,12 +96,9 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 		<div class="col-md-4 category_work_news">
 		<?php if(isset($fun->pic_extension)):?>
 			<img src="<?php echo $put;?>/images/<?php echo $fun->id . "." . $fun->pic_extension;?>" class="news_image" />
-
-		<?php else:?>
-			<img src="images/placeholder.png" class="news_image" />
 		<?php endif;?>
 			<a href="singlePost.php?id=<?php echo $work->id;?>"><h1><?php echo $work->name;?></h1></a>
-			<p><?php echo $work->description;?></p>
+			<p><?php echo $work->description;?>...</p>
 			<a href="singlePost.php?id=<?php echo $work->id;?>" class="more">Pročitaj više...</a>
 		</div>
 		<?php endforeach;?>
@@ -123,12 +111,9 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 		<div class="col-md-4 category_culture_news">
 		<?php if(isset($fun->pic_extension)):?>
 			<img src="<?php echo $put;?>/images/<?php echo $fun->id . "." . $fun->pic_extension;?>" class="news_image" />
-
-		<?php else:?>
-			<img src="images/placeholder.png" class="news_image" />
 		<?php endif;?>
 			<a href="singlePost.php?id=<?php echo $cult->id;?>"><h1><?php echo $cult->name;?></h1></a>
-			<p><?php echo $cult->description;?></p>
+			<p><?php echo $cult->description;?>...</p>
 			<a href="singlePost.php?id=<?php echo $cult->id;?>" class="more">Pročitaj više...</a>
 		</div>
 		<?php endforeach;?>
@@ -141,12 +126,9 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 		<div class="col-md-4 category_school_news">
 		<?php if(isset($fun->pic_extension)):?>
 			<img src="<?php echo $put;?>/images/<?php echo $fun->id . "." . $fun->pic_extension;?>" class="news_image" />
-
-		<?php else:?>
-			<img src="images/placeholder.png" class="news_image" />
 		<?php endif;?>
 			<a href="singlePost.php?id=<?php echo $edu->id;?>"><h1><?php echo $edu->name;?></h1></a>
-			<p><?php echo $edu->description;?></p>
+			<p><?php echo $edu->description;?>...</p>
 			<a href="singlePost.php?id=<?php echo $edu->id;?>" class="more">Pročitaj više...</a>
 		</div>
 		<?php endforeach;?>

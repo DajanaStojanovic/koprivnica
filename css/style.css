@@ -63,6 +63,7 @@ video {
 	position: relative;
 	top: 0;
 	z-index: -1;
+	object-fit: cover
 }
 
 .post_image {
@@ -198,7 +199,7 @@ video {
 		.category_fun_news {
 			margin: 20px;
 			width: 30%;
-			min-height: 300px;
+			height: 380px;
 		}
 
 			.category_fun_news a {
@@ -257,7 +258,7 @@ video {
 		.category_sport_news {
 			margin: 20px;
 			width: 30%;
-			min-height: 300px;
+			height: 380px;
 		}
 
 			.category_sport_news a {
@@ -316,7 +317,7 @@ video {
 		.category_health_news {
 			margin: 20px;
 			width: 30%;
-			min-height: 300px;
+			height: 380px;
 		}
 			.category_health_news a {
 				text-decoration: none;
@@ -375,7 +376,7 @@ video {
 		.category_work_news {
 			margin: 20px;
 			width: 30%;
-			min-height: 300px;
+			height: 380px;
 		}
 			.category_work_news a {
 				text-decoration: none;
@@ -433,7 +434,7 @@ video {
 		.category_culture_news {
 			margin: 20px;
 			width: 30%;
-			min-height: 300px;
+			height: 380px;
 		}
 			.category_culture_news a {
 				text-decoration: none;
@@ -492,7 +493,7 @@ video {
 		.category_school_news {
 			margin: 20px;
 			width: 30%;
-			min-height: 300px;
+			height: 380px;
 		}
 			.category_school_news a {
 				text-decoration: none;
@@ -625,6 +626,9 @@ video {
 	video {
 		height: 50%;
 	}
+	.category_img {
+		height: 390px;
+	}
 }
 
 @media(max-width: 991px) {
@@ -635,6 +639,27 @@ video {
 	.category_culture_news,
 	.category_school_news {
 		float: left;
+	}
+	.content_index {
+		margin-top: -50px;
+	}
+	video {
+		height: 50%;
+	}
+	.single_day_image {
+		width: 25%;
+		float: left;
+	}
+	.single_day_description {
+		width: 62%;
+		float: left;
+	}
+	.single_day_location {
+		width: 12%;
+		float: left;
+	}
+	.single_day_location button {
+		right: 0;
 	}
 }
 
@@ -658,11 +683,6 @@ video {
 	}
 }
 
-@media(max-width: 800px) {
-	video {
-		height: 40%;
-	}
-}
 
 @media(max-width: 767px) {
 	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
@@ -672,12 +692,84 @@ video {
 		background-color: rgba(1, 120, 188, 0.5);
 	}
 	.navbar-default .navbar-toggle .icon-bar {
-		background-color: rgba(1, 120, 188, 1);
+		background-color: #fff;
 	}
 	.navbar-default .navbar-toggle {
-		border-color: rgba(1, 120, 188, 1);
+		border-color: #fff;
 	}
 	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
 		border-color: transparent;
+	}
+	.content_index {
+		margin-top: -60px;
+	}
+	.category_img {
+		height: 330px;
+	}
+}
+
+@media(max-width: 640px) {
+	.category_fun_news,
+	.category_sport_news,
+	.category_health_news,
+	.category_work_news,
+	.category_culture_news,
+	.category_school_news {
+		width: 92%;
+	}
+	.content_index {
+		margin-top: -150px;
+	}
+	.single_day_location,
+	.single_day_image,
+	.single_day_description {
+		width: 100%;
+	}
+	.single_day_location {
+		min-height: 40px;
+	}
+	.single_day_location button {
+		right: 10px;
+	}
+	.single_day_header {
+		height: 250px;
+	}
+	.single_day_header p {
+		font-size: 60px;
+		padding-top: 60px;
+	}
+}
+
+@media(max-width: 500px) {
+	.category_fun_news,
+	.category_sport_news,
+	.category_health_news,
+	.category_work_news,
+	.category_culture_news,
+	.category_school_news {
+		width: 90%;
+	}
+}
+
+@media(max-width: 414px) {
+	.category_fun_news,
+	.category_sport_news,
+	.category_health_news,
+	.category_work_news,
+	.category_culture_news,
+	.category_school_news {
+		width: 88%;
+	}
+}
+
+@media(max-width: 360px) {
+	.category_fun_news,
+	.category_sport_news,
+	.category_health_news,
+	.category_work_news,
+	.category_culture_news,
+	.category_school_news {
+		width: 92%;
+		margin: 20px 0;
 	}
 }
