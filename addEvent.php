@@ -61,9 +61,9 @@
 			  </div>
 
 			  <p>Početak događaja: <input type="text" class="form-control date" id="startDate"></p>
-			  <p>Od koliko sati: <input type="time" class="form-control date" id="startTime"></p>
+			  <p>Od koliko sati: <input type="number" class="form-control date" max="23" min="0" id="startTime"></p>
 			  <p>Kraj događaja: <input type="text" class="form-control date" id="endDate"></p>
-			  <p>Do koliko sati: <input type="time" class="form-control date" id="endTime"></p>
+			  <p>Do koliko sati: <input type="number" class="form-control date" max="24" min="0" id="endTime"></p>
 			
 			<div class="form-group">
 			   <div class="col-sm-12">
@@ -122,7 +122,7 @@ $("#addEvent").click(function(){
 	var endMonth = endDate.split("/")[0];
 	var endYear = endDate.split("/")[2];
 	var endTime = $("#endTime").val();
-	if(endTime=="" || startTime=="" || eventTitle=="" || eventDescription=="" || eventAddress=="" || startDate=="" || endDate=="" || price==""){
+	if(endTime=="" || startTime=="" || eventTitle=="" || eventDescription=="" || eventAddress=="" || startDate=="" || endDate==""){
 		alert("Svi podaci moraju biti popunjeni osim vanjske poveznice");
 		return false;
 	}
@@ -131,10 +131,14 @@ $("#addEvent").click(function(){
 		alert("Datum završetka događaja ne može biti ispred početka događaja!");
 		return false;
 	}
+	if(startTime >= 24 || endTime > 24){
+		alert("Vrijeme početka ili završetka nisu pravilno unešeni.");
+		return false;
+	}
 	$.ajax({
 				type: 'POST',
 				url: 'newEvent.php',
-				data: "name=" + eventTitle + "&description=" + eventDescription + "&location=" + eventAddress + "&category=" + category + "&price=" + price + "&organizer=" + organizer + "&start_day=" + startDay + "&start_month=" + startMonth + "&start_year=" +  startYear + "&finish_day=" + endDay + "&finish_month=" + endMonth + "&finish_year=" + endYear + "&pic_extension=null" + "&startTime=" + startTime + "&endTime=" + endTime,
+				data: "name=" + eventTitle + "&description=" + eventDescription + "&location=" + eventAddress + "&category=" + category + "&price=" + price + "&organizer=" + organizer + "&start_day=" + startDay + "&start_month=" + startMonth + "&start_year=" +  startYear + "&finish_day=" + endDay + "&finish_month=" + endMonth + "&finish_year=" + endYear + "&pic_extension=null" + "&startTime=" + startTime + "&endTime=" + endTime + "&url=" + url,
 				dataType: 'text'
 			}).done(function(rezultat) {
 				if(rezultat!="NO"){
