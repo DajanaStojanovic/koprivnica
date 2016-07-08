@@ -604,6 +604,35 @@ video {
 	margin-top: -40px;
 	z-index: 9999;
 }
+/*Dodavanje događaja*/
+.dodaj_dogadaj {
+	margin-top: 30px;
+}
+.select_street {
+	display: inline-flex;
+}
+	.select_street select {
+		width: 70%;
+	}
+	.select_street input {
+		width: 25%;
+		margin-left: 5%;
+	}
+	.date {
+		width: 30%;
+	}
+	.ui-widget-header,
+	.ui-datepicker-calendar {
+		background-color: rgba(1, 120, 188, 0.9);
+		color: #fff;
+		width: 300px;
+	}
+	.ui-datepicker-calendar a,
+	.ui-widget-header a {
+		color: #fff;
+		text-decoration: none;
+	}
+
 @media(max-width: 1670px) {
 	.content_index {
 		margin-top: -80px;
