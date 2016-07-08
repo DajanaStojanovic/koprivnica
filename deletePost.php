@@ -1,10 +1,15 @@
 <?php
 include_once 'konfiguracija.php';
-if(!$_POST || !isset($_SESSION["userData"])){
+if(!$_POST){
 	echo "NO";
 }else{
-	$delete = $veza->prepare("delete from event where id=:id");
-	$delete->bindParam(":id", $_POST["id"]);
-	$delete->execute();
-	echo "OK";
+	 if(!isset($_SESSION["userData"])){
+		 $delete = $veza->prepare("delete from event where id=:id");
+		$delete->bindParam(":id", $_POST["id"]);
+		$delete->execute();
+		echo "OK";
+	 }else{
+		 echo "NO";
+	 }
+	
 }
