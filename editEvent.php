@@ -9,7 +9,7 @@ $getEvent = $event->fetch(PDO::FETCH_OBJ);
  if(!isset($_SESSION["userData"])){
 	header("location: odjava.php");
 }else{
-	if($_SESSION["userData"]->type!=1 || $_SESSION["userData"]->id!=$getEvent->id){
+	if($_SESSION["userData"]->type!=1 || $_SESSION["userData"]->id!=$getEvent->organizer){
 		header("location: odjava.php");
 	}
 }
