@@ -2,7 +2,12 @@
 <?php include_once "header.php"; ?>
 <?php if(!isset($_SESSION["userData"])){
 	header("location: odjava.php");
-}?>
+}
+$event = $veza->prepare("select * from event where id=:id");
+$event->bindParam(":id", $_GET["id"]);
+$event->execute();
+$getEvent = $event->fetch(PDO::FETCH_OBJ);
+?>
 <div class="row content">
 
 <div class="single_post" style="text-align: center;">
@@ -12,37 +17,20 @@
 	<form class="form-horizontal" role="form">
 			  <div class="form-group">
 			    <div class="col-sm-12">
-			    	<input type="text" class="form-control" id="eventTitle" placeholder="Naslov događaja">
+			    	<input type="text" class="form-control" id="eventTitle" placeholder="Naslov događaja" value="<?php echo $getEvent->name;?>">
 			  </div>
 			  </div>
 
 			  <div class="form-group">
 			    <div class="col-sm-12">
-			    	<textarea type="text" class="form-control" id="eventDescription" placeholder="Opis događaja"></textarea>
-			  </div>
-			  </div>
-
-			  <div class="form-group">
-			   <div class="col-sm-12 select_street">
-			    	<select class="form-control" id="eventAddressSelect">
-						<option value="" selected> Odaberite ulicu </option>
-						<?php 
-						$streets = $veza->prepare("select * from streetnames order by name");
-						$streets->execute();
-						$allStreets = $streets->fetchAll(PDO::FETCH_OBJ);
-						
-						foreach($allStreets as $str):?>
-						<option value="<?php echo $str->name;?>"> <?php echo $str->name;?> </option>
-						<?php endforeach;?>
-					</select>
-					<input type="text" class="form-control" id="eventAddressSelectNum" placeholder="Kućni broj" />
+			    	<textarea type="text" class="form-control" id="eventDescription" placeholder="Opis događaja"><?php echo $getEvent->description;?></textarea>
 			  </div>
 			  </div>
 			  
-			  <p> Ako lokacija nije navedena u izborniku gore, u izborniku ostavite na "Odaberite ulicu" i u ovo polje upišite adresu.</p>
+			  
 			  <div class="form-group">
 			   <div class="col-sm-12">
-			    	<input type="text" class="form-control" id="eventAddressCustom" placeholder="Mjesto događaja - npr. Duga ulica 7">
+			    	<input type="text" class="form-control" id="eventAddressCustom" placeholder="Mjesto događaja - npr. Duga ulica 7" value="<?php echo $getEvent->location;?>">
 			  </div>
 			  </div>
 
@@ -50,30 +38,30 @@
 			    <div class="col-sm-12">
 			    	  <label for="category">Kategorija događaja:</label>
 					  <select class="form-control" id="category">
-					    <option value="Zdravlje">Zdravlje</option>
-					    <option value="Zabava">Zabava</option>
-						<option value="Posao">Posao</option>
-						<option value="Kultura">Kultura</option>
-						<option value="Obrazovanje">Obrazovanje</option>
-						<option value="Sport">Sport</option>
+					    <option value="Zdravlje" <?php if($getEvent->category=="Zdravlje"){echo "selected";}?>>Zdravlje</option>
+					    <option value="Zabava" <?php if($getEvent->category=="Zabava"){echo "selected";}?>>Zabava</option>
+						<option value="Posao" <?php if($getEvent->category=="Posao"){echo "selected";}?>>Posao</option>
+						<option value="Kultura" <?php if($getEvent->category=="Kultura"){echo "selected";}?>>Kultura</option>
+						<option value="Obrazovanje" <?php if($getEvent->category=="Obrazovanje"){echo "selected";}?>>Obrazovanje</option>
+						<option value="Sport" <?php if($getEvent->category=="Sport"){echo "selected";}?>>Sport</option>
 					  </select>
 			  </div>
 			  </div>
 
-			  <p>Početak događaja: <input type="text" class="form-control date" id="startDate"></p>
-			  <p>Od koliko sati: <input type="time" class="form-control date" id="startTime"></p>
-			  <p>Kraj događaja: <input type="text" class="form-control date" id="endDate"></p>
-			  <p>Do koliko sati: <input type="time" class="form-control date" id="endTime"></p>
+			  <p>Početak događaja: <input type="text" class="form-control date" id="startDate" value="<?php echo $getEvent->start_month . "/" . $getEvent->start_day . "/" . $getEvent->start_year ;?>"></p>
+			  <p>Od koliko sati: <input type="time" class="form-control date" id="startTime" value="<?php echo $getEvent->start_time;?>"></p>
+			  <p>Kraj događaja: <input type="text" class="form-control date" id="endDate" value="<?php echo $getEvent->finish_month . "/" . $getEvent->finish_day . "/" . $getEvent->finish_year ;?>"></p>
+			  <p>Do koliko sati: <input type="time" class="form-control date" id="endTime" value="<?php echo $getEvent->finish_time;?>"></p>
 			
 			<div class="form-group">
 			   <div class="col-sm-12">
-			    	<input type="number" class="form-control" id="price" placeholder="Cijena ulaza u kunama">
+			    	<input type="number" class="form-control" id="price" placeholder="Cijena ulaza u kunama" value="<?php echo $getEvent->price;?>">
 			  </div>
 			  </div>
 			  
 			<div class="form-group">
 			   <div class="col-sm-12">
-			    	<input type="text" class="form-control" id="url" placeholder="Vanjski izvor (poveznica)">
+			    	<input type="text" class="form-control" id="url" placeholder="Vanjski izvor (poveznica)" value="<?php echo $getEvent->url;?>">
 			  </div>
 			  </div>
 			  
@@ -99,12 +87,7 @@
 $("#addEvent").click(function(){
 	var eventTitle = $.trim($("#eventTitle").val());
 	var eventDescription = $.trim($("#eventDescription").val());
-	var eventAddressCustom = $.trim($("#eventAddressCustom").val());
-	if(eventAddressCustom==""){
-		var eventAddress = $.trim($("#eventAddressSelect").val() + " " + $("#eventAddressSelectNum").val());
-	}else{
-		var eventAddress = eventAddressCustom;
-	}
+	var eventAddress = $.trim($("#eventAddressCustom").val());
 	var category = $("#category").val();
 	var organizer = "<?php echo $_SESSION["userData"]->id;?>";
 	
@@ -133,7 +116,7 @@ $("#addEvent").click(function(){
 	}
 	$.ajax({
 				type: 'POST',
-				url: 'newEvent.php',
+				url: 'updateEvent.php',
 				data: "name=" + eventTitle + "&description=" + eventDescription + "&location=" + eventAddress + "&category=" + category + "&price=" + price + "&organizer=" + organizer + "&start_day=" + startDay + "&start_month=" + startMonth + "&start_year=" +  startYear + "&finish_day=" + endDay + "&finish_month=" + endMonth + "&finish_year=" + endYear + "&pic_extension=null" + "&startTime=" + startTime + "&endTime=" + endTime,
 				dataType: 'text'
 			}).done(function(rezultat) {
