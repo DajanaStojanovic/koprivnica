@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2016 at 10:48 AM
+-- Generation Time: Jul 08, 2016 at 11:15 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -38,7 +38,7 @@ CREATE TABLE `event` (
   `start_day` varchar(250) NOT NULL,
   `start_month` varchar(250) NOT NULL,
   `start_year` varchar(250) NOT NULL,
-  `start_time` time NOT NULL,
+  `start_time` time DEFAULT NULL,
   `finish_day` varchar(250) NOT NULL,
   `finish_month` varchar(250) NOT NULL,
   `finish_year` varchar(250) NOT NULL,
@@ -53,10 +53,16 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id`, `name`, `location`, `description`, `start_day`, `start_month`, `start_year`, `start_time`, `finish_day`, `finish_month`, `finish_year`, `finish_time`, `organizer`, `price`, `category`) VALUES
-(1, 'Istražujemo i igramo se s tabletima', 'Knjižnica i čitaonica “Fran Galović”', 'Radionica za djecu od 5 do 7 godina\r\n\r\nVoditeljice: knjižničarke u Dječjem odjelu', '08', '07', '2016', '10:00:00', '08', '07', '2016', '10:45:00', 'Knjižnica i čitaonica “Fran Galović”', NULL, 'Zabava'),
-(2, 'Program „Zdravstveni susreti pod suncobranima“', 'Knjižnica i čitaonica “Fran Galović”', 'Terasa ispred Knjižnice i čitaonice “Fran Galović” /  u slučaju lošeg vremena Čitaonica tiska\r\n\r\nU suradnji s Općom bolnicom „Dr. Tomislav Bardek“ Koprivnica\r\n\r\nTema: Perite ruke – spasite živote\r\n\r\nPredavač(i): Snježana Vuljak ,bacc.med.ses. i Anita Galinec,bacc.med.ses.', '08', '07', '2016', '10:00:00', '08', '07', '2016', NULL, 'Knjižnica i čitaonica “Fran Galović” u suradnji s Općom bolnicom „Dr. Tomislav Bardek“ Koprivnica', NULL, 'Zdravlje'),
+(1, 'Istražujemo i igramo se s tabletima', 'Knjižnica i čitaonica “Fran Galović”', 'Radionica za djecu od 5 do 7 godina\r\n\r\nDječji odjel\r\n\r\nVoditeljice: knjižničarke u Dječjem odjelu', '08', '07', '2016', '10:00:00', '08', '07', '2016', '10:45:00', 'Knjižnica i čitaonica “Fran Galović”', NULL, 'Obrazovanje'),
+(2, 'Program „Zdravstveni susreti pod suncobranima“', 'Knjižnica i čitaonica “Fran Galović”', 'Terasa ispred Knjižnice i čitaonice “Fran Galović” /  u slučaju lošeg vremena Čitaonica tiska\r\n\r\nTema: Perite ruke – spasite živote\r\n\r\nPredavač(i): Snježana Vuljak ,bacc.med.ses. i Anita Galinec,bacc.med.ses.', '08', '07', '2016', '10:00:00', '08', '07', '2016', NULL, 'Knjižnica i čitaonica “Fran Galović” u suradnji s Općom bolnicom „Dr. Tomislav Bardek“ Koprivnica', NULL, 'Zdravlje'),
 (3, 'Ljeto u Ludensu – Predstava Od tišine do glazbe', 'Atrij Doma mladih Koprivnica', 'Predstava Od tišine do glazbe (9. srpnja). U jednosatnom performansu dramski glumac i pijanist Jure Ivanušič atraktivno, virtuozno i žanrovski raznoliko vodi nas kroz fenomen glazbe. U svom ilustrativnom, duhovitom, a ipak muzikološko vjerodostojnom nastupu majstorski se transformira iz jedne glazbeno relevantne uloge u sljedeću; od pijanista do pjevača, od skladatelja do dirigenta, od muzikologa do glazbenog kritičara. Od kamenog doba do Rolling Stonesa, od klasike do moderne, od jazza do popa, od popevke do šansona, od uvertire do aplauza. Jure Ivanušič izvanredan je glumac i vrhunski glazbenik koji, polazeći od nekih elemenata kabarea, stvara rijetko viđenu svečanost kazališta, glazbe i humora.', '09', '07', '2016', '21:00:00', '09', '07', '2016', NULL, NULL, NULL, 'Kultura'),
-(4, 'Pričaonica za djecu predškolske dobi od 4 godine nadalje', 'Knjižnica i čitaonica “Fran Galović”', 'Čitamo priču: Čajana na mjesecu\r\n\r\nVoditeljica: Marta Jagušić, odgajateljica\r\n', '11', '07', '2016', '17:30:00', '11', '07', '2016', '18:30:00', NULL, NULL, 'Obrazovanje');
+(4, 'Pričaonica za djecu predškolske dobi od 4 godine nadalje', 'Knjižnica i čitaonica “Fran Galović”', 'Dječji odjel\r\n\r\nČitamo priču: Čajana na mjesecu\r\n\r\nVoditeljica: Marta Jagušić, odgajateljica\r\n', '11', '07', '2016', '17:30:00', '11', '07', '2016', '18:30:00', 'Knjižnica i čitaonica “Fran Galović”', NULL, 'Obrazovanje'),
+(5, 'Kreativna radionica STRIPA – za djecu i mlade', 'Knjižnica i čitaonica “Fran Galović”', 'Terasa ispred Knjižnice i čitaonice “Fran Galović”/ u slučaju lošeg vremena Čitaonica tiska\r\n\r\nVoditelj: Zvonimir Haramija', '13', '07', '2016', '10:00:00', '13', '07', '2016', NULL, 'Knjižnica i čitaonica “Fran Galović”', NULL, 'Zabava'),
+(6, 'Program „Zdravstveni susreti pod suncobranima“', 'Knjižnica i čitaonica “Fran Galović”', 'Terasa ispred Knjižnice i čitaonice “Fran Galović”/  u slučaju lošeg vremena Čitaonica tiska\r\n\r\nTema: Žene i novorođenčad : “SRCE PRIMALJSTVA“\r\n\r\nPredavač(i): Izabela Knapić, prvostupnica primaljstva i Maja Katana,dr.med.', '15', '07', '2016', '10:00:00', '15', '07', '2016', NULL, 'Knjižnica i čitaonica “Fran Galović” u suradnji s Općom bolnicom „Dr. Tomislav Bardek“ Koprivnica', NULL, 'Zdravlje'),
+(7, 'Istražujemo i igramo se s tabletima', 'Knjižnica i čitaonica “Fran Galović”', 'Radionica za djecu od 5 do 7 godina\r\n\r\nVoditeljice: knjižničarke u Dječjem odjelu', '15', '07', '2016', '10:00:00', '15', '07', '2016', '10:45:00', 'Knjižnica i čitaonica “Fran Galović”', NULL, 'Obrazovanje'),
+(8, 'Ljeto u Ludensu – Predstava SHAKEspeare na EXIT', 'Atrij Doma mladih Koprivnica', 'Predstava SHAKEspeare na EXIT zagrebačkog Teatra Exit u kojoj igraju Živko Anočić, Saša Anočić i Marko Makovičić, a režiju potpisuje Matko Raguž. Što se događa kada se tri obična momka i jedan bard susretnu oči u oči, publika će moći pogledati 16. srpnja. Shakespeare je napisao 37 komada. Od čega 10 povijesnih drama i 18 komedija. Svaki od 37 komada postavljen pojedinačno na scenu traje, zavisno od kraćenja, između 3 i 5 sati. Dakle, 37 x 4 sata (prosječno) iznosi 148 sati. Jeste li znali kako je sve to moguće odigrati u manje od 2 sata?! Publika će kroz ovu predstavu upoznati Romea i Juliju, Hamleta, Ofeliju, Macbetha i njegovu krvavu Lady, Antonija i Kleopatru, Mletačkog trgovca, Tita Andronika, Kralja Leara, Richarda III, Henrika VIII i mnoge druge, kakve ih još nikada nije vidjela.', '16', '07', '2016', '21:00:00', '16', '07', '2016', NULL, NULL, NULL, 'Kultura'),
+(9, 'Pričaonica za djecu predškolske dobi od 4 godine nadalje', 'Knjižnica i čitaonica “Fran Galović”', 'Dječji odjel\r\n\r\nČitamo priču: Čarapojedac\r\n\r\nVoditeljica: Marta Jagušić, odgajateljica', '18', '07', '2016', '17:30:00', '18', '07', '2016', '18:30:00', 'Knjižnica i čitaonica “Fran Galović”', NULL, 'Obrazovanje'),
+(10, 'Kreativna radionica „Bakina kuharica“ – izrada kuharice starih recepata', 'Knjižnica i čitaonica “Fran Galović”', 'Za djecu i odrasle\r\n\r\nTerasa ispred Knjižnice i čitaonice “Fran Galović”/  u slučaju lošeg vremena Čitaonica tiska\r\n', '20', '07', '2016', '09:30:00', '20', '07', '2016', NULL, 'Knjižnica i čitaonica “Fran Galović” u suradnji s Domom za starije i nemoćne Koprivnica', NULL, 'Zabava');
 
 -- --------------------------------------------------------
 
@@ -339,7 +345,7 @@ ALTER TABLE `streetnames`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `feedback`
 --
