@@ -17,7 +17,7 @@ session_start();?>
 <body>
 
 <div class="login_button">
-  <button data-toggle="modal" data-target="#myModal"><img src="images/login.png" alt="Login" /> </button>
+  <button data-toggle="modal" data-target="#myModal">Prijavi se</button>
 </div>
 
 <div class="register_button">
