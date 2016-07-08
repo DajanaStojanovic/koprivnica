@@ -33,9 +33,11 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 ?>
 <?php include_once "header.php"; ?>
 
-<img src="images/video.png" class="video_start" />
+<video autoplay muted loop style="width: 100%">
+	<source src="images/video.mp4" type="video/mp4">
+</video>
 
-<div class="content">
+<div class="content_index">
 
 	<div class="row">
 		<div class="category_fun"><a href="singleCategory.php?cat=Zabava">Zabava</a></div>

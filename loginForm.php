@@ -9,6 +9,7 @@
       </div>
       
     <div class="modal-body">
+    <form class="form-horizontal" role="form">
 			  <div class="form-group">
 			    <div class="col-sm-12">
 			    	<input type="text" class="form-control" id="email_login" placeholder="E-mail">

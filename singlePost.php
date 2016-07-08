@@ -21,7 +21,7 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 	<br/>
 	<div class="single_post_location">Lokacija: <strong><?php echo $singleEvent->location;?></strong></div>
 
-	<div class="single_post_day">Vrijeme: <strong><?php echo $singleEvent->start_day . "." . $singleEvent->start_month . "., " . $singleEvent->start_time . " - " . $singleEvent->finish_day . "." . $singleEvent->finish_month . "., " . $singleEvent->finish_time;?></strong></div>
+	<div class="single_post_day">Početak: <strong><?php echo $singleEvent->start_day . "." . $singleEvent->start_month . ".</strong> u <strong>" . $singleEvent->start_time . "</strong>  sati<br />Završetak: <strong>" . $singleEvent->finish_day . "." . $singleEvent->finish_month . ".</strong> u <strong>" . $singleEvent->finish_time;?></strong> sati</div>
 	
 </div>
 	<div class="col-md-4">
@@ -29,8 +29,12 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 		<img src="<?php echo $put;?>images/<?php echo $singleEvent->id;?>.<?php echo $singleEvent->pic_extension;?>" alt="Slika vijesti" class="img-responsive post_image" /> 
 		<?php else:?>
 		<img src="images/placeholder.png" />
+<<<<<<< HEAD
 	<?php endif;?>
 
+=======
+		<?php endif;?>
+>>>>>>> origin/master
 	</div>
 </div>
 <div class="row">

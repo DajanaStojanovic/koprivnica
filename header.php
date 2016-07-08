@@ -44,9 +44,12 @@ session_start();?>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Naslovna</a></li>
-        <li><a href="#">Nešto</a></li>
-      	<li><a href="#">Nešto</a></li>
-        <li><a href="#">Nešto</a></li>
+        <li><a href="singleCategory.php?cat=Zabava">Zabava</a></li>
+      	<li><a href="singleCategory.php?cat=Sport">Sport</a></li>
+        <li><a href="singleCategory.php?cat=Zdravlje">Zdravlje</a></li>
+        <li><a href="singleCategory.php?cat=Posao">Posao</a></li>
+        <li><a href="singleCategory.php?cat=Kultura">Kultura</a></li>
+        <li><a href="singleCategory.php?cat=Obrazovanje">Obrazovanje</a></li>
       </ul>
 
 
