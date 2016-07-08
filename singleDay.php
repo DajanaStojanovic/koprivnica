@@ -16,11 +16,11 @@ $allDayEvents = $day->fetchAll(PDO::FETCH_OBJ);
 <?php foreach($allDayEvents as $events):?>
 <div class="single_day_content row">
 	<div class="col-md-3">
-		<h3> <?php echo $event->name;?> </h3>
+		<h3> <?php echo $events->name;?> </h3>
 	</div>
 
 	<div class="col-md-6">
-		<?php echo $event->description;?>
+		<?php echo $events->description;?>
 	</div>
 	<div class="col-md-3">
 		<button> Lokacija </button>
