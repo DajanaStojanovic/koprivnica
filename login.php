@@ -4,7 +4,7 @@ if(!$_POST){
 	echo "Polja za prijavu ne smiju biti prazna";
 }else{
 	$password = md5($_POST["password"]);
-	$login = $veza->prepare("select * from k_operater where email=:email and password=:password");
+	$login = $veza->prepare("select * from operater where email=:email and password=:password");
 	$login->bindParam(":email", $_POST["korisnickoime"]);
 	$login->bindParam(":password", $password);
 	$login->execute();

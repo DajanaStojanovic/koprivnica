@@ -1,9 +1,10 @@
 <?php include 'konfiguracija.php';?>
 <?php 
 //CURRENT MONTH EVENTS
-$events = $veza->prepare("select * from event where start_month = :currentMonth and category = :category");
+$events = $veza->prepare("select * from event where start_month = :currentMonth and start_year = :currentYear and category = :category");
 $events->bindParam(":currentMonth", $currentMonth);
-$events->bindParam(":category", $_POST["cat"]);
+$events->bindParam(":currentYear", $currentYear);
+$events->bindParam(":category", $_GET["cat"]);
 $events->execute();
 $allEvents = $events->fetchAll(PDO::FETCH_OBJ);
 
@@ -14,8 +15,8 @@ $allEvents = $events->fetchAll(PDO::FETCH_OBJ);
 	<script src="js/languages/jquery.event.calendar.en.js"></script>
 	<img src="images/images.png" alt="Slika kategorije" class="category_img" />
 
-<div class="<?php echo $_POST["cat"];?>">
-	<h1><?php echo $_POST["cat"];?></h1>
+<div class="<?php echo $_GET["cat"];?>">
+	<h1><?php echo $_GET["cat"];?></h1>
 </div>
 
 <div class="content">
@@ -49,7 +50,7 @@ $allEvents = $events->fetchAll(PDO::FETCH_OBJ);
 				?>
 				<a href="<?php echo $put;?>singleDay.php?day=<?php echo $day;?>&cat=<?php echo $_GET["cat"];?>">
 					<div class="col-xs-4 col-md-2 col-lg-1" 
-					style="background-color: <?php if($numberOfEvents==0){ echo "white";}else{ echo "#0178BC";}?>
+					style="background-color: <?php if($numberOfEvents==0){ echo "white;";}else{ echo "#0178BC; color: white";}?>
 					; border: 1px solid blue; text-align: center;">
 						<div class="calendarDay" id="<?php echo $day;?>">
 							

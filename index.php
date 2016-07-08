@@ -45,7 +45,7 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 			<img src="<?php echo $put;?>/images/<?php echo $fun->id . "." . $fun->pic_extension;?>" class="news_image" />
 
 		<?php else:?>
-			<img src="images/koprivnica.jpg" class="news_image" />
+			<img src="images/placeholder.png" class="news_image" />
 		<?php endif;?>
 		
 			<a href="singlePost.php?id=<?php echo $fun->id;?>"><h1><?php echo $fun->name;?></h1></a>

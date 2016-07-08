@@ -3,7 +3,7 @@ include_once 'konfiguracija.php';
 if(!$_POST){
 	echo "Polja za registraciju ne smiju biti prazna.";
 }else{
-	$login = $veza->prepare("select * from k_operater where email=:email or username=:username");
+	$login = $veza->prepare("select * from operater where email=:email or username=:username");
 	$login->bindParam(":email", $_POST["email"]);
 	$login->bindParam(":username", $_POST["username"]);
 	$login->execute();
@@ -11,7 +11,7 @@ if(!$_POST){
 	
 	if($userdata==null){
 		$password = md5($_POST["password"]);
-		$register = $veza->prepare("insert into k_operater (username, email, password, tel, type) values (:username, :email, :password, :tel, 0");
+		$register = $veza->prepare("insert into operater (username, email, password, tel, type) values (:username, :email, :password, :tel, 0");
 		$register->bindParam(":username", $_POST["username"]);
 		$register->bindParam(":email", $_POST["email"]);
 		$register->bindParam(":password", $password);
