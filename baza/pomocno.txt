@@ -1,4 +1,4 @@
 SIPANJE BAZE
 
 LUKA:
-mysql -u root -p --default_character_set=utf8 < c:\xampp\htdocs\koprivnica\baza\koprivnica_hackathon.sql
+mysql -u root -p --default_character_set=utf8 < d:\xampp\htdocs\KoprivnicaLife\baza\koplife_db.sql

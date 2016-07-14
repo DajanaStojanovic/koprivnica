@@ -15,7 +15,7 @@ $mysql_host = "localhost";
 $mysql_database = "koprivnica_hackathon";
 $mysql_user = "root";
 $mysql_password = "";
-$put="/koprivnica/";
+$put="/KoprivnicaLife/";
 
 
 //spajanje na bazu

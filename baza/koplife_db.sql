@@ -7,9 +7,9 @@
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
-drop database if exists koprivnica_hackathon;
-create database koprivnica_hackathon character set utf8 collate utf8_general_ci;
-use koprivnica_hackathon;
+drop database if exists KoprivnicaLifeDB;
+create database KoprivnicaLifeDB character set utf8 collate utf8_general_ci;
+use KoprivnicaLifeDB;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `koprivnica_hackathon`
+-- Database: `KoprivnicaLifeDB`
 --
 
 -- --------------------------------------------------------

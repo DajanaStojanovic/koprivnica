@@ -1,0 +1,22 @@
+-Sredit mijenjanje mjeseci u kalendaru kontrole +/- = LUKA
+-Enkripcija logina preko Jquery-a - ili koristit neki jquery md5 hasher ili prebacit na drugi naèin enkripcije - istražit = LUKA
+-Search funkcija - dodam mockup kasnije kako sam zamislio cijeli sklop. = LUKA
+-Color coding za kategoriju dogaðaja - ne nužno cijela tema nego samo neki obojani kvadratiæ koji oznaèava boju kategorije - tu prièam primarno za search funkciju,
+	koja bi pokazala na jednom kalendaru sve moguæe dogaðaje = LUKA/DAJANA/IVONA
+-Login i register modali ne smiju biti oba otvorena u isto vrijeme - treba srediti kad se jedan otvori, drugi se zatvara ako je do tada bio otvoren. = DAJANA
+-Sredit uklapanje teksta i slike na naslovnoj stranici (što se tièe pozadinske boje - ili ju treba maknut ili treba stavit da bude 100% width,
+	 a ne samo koliko je tekst širok) = DAJANA
+-Upload slike prilikom kreiranja dogaðaja (možda iskoristit i cropper na odreðenu rezoluciju) = LUKA
+-Ne sjeæam se jel koristimo slike za kategorije - ako da, trebaju bit dobre i naše, ako ne - još bolje, manje posla. = IVONA
+-Sve input forme prilagodit da budu što pristupaènije, bolje složene i logiènije = LUKA/DAJANA
+-Video na naslovnoj još uvijek prelazi granice u Firefoxu  = DAJANA
+
+
+
+
+
+-Trebali bi još doradit dizajn, predlažem da svatko od nas da prijedloge što treba popravit i ako imate ideju na koji toèno naèin, napišite i to. Ovo što smo do sada
+	napravili bilo je dovoljno za hackathon - za produkciju baš i nije.
+	
+-MOLIM VAS 3 DA AKO NEŠTO RADITE PRIJE SAMOG DOGOVORA, A MOGLI BI ÈISTO DA ZNAMO KOLIKO ÆE NAM VREMENA TREBAT, DA BILJEŽITE KOLIKO STE SATI POTROŠILI NA NEŠTO DA ZNAMO
+PRAVILNO ODREDIT CIJENU. TAKO ÆEMO RADIT TOÈNO ONOLIKO KOLIKO I TREBAMO RADIT BEZ RIZIKA DA NAS NEŠTO PATI PA POTROŠIMO VIŠE SATI ZA ISTE NOVCE.
