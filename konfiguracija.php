@@ -12,7 +12,7 @@ $prefix="eclat";
 //lokalno
 
 $mysql_host = "localhost";
-$mysql_database = "koprivnica_hackathon";
+$mysql_database = "KoprivnicaLifeDB";
 $mysql_user = "root";
 $mysql_password = "";
 $put="/KoprivnicaLife/";
