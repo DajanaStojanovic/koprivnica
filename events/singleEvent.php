@@ -42,7 +42,7 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 	<?php if(isset($singleEvent->pic_extension)):?>
 		<img src="<?php echo $put;?>images/<?php echo $singleEvent->pic_extension;?>" alt="Slika vijesti" class="img-responsive post_image" /> 
 		<?php else:?>
-		<img src="images/placeholder.png" />
+		<img src="<?php echo $put;?>images/placeholder.png" />
 	<?php endif;?>
 	</div>
 </div>

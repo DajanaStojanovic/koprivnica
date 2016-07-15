@@ -54,9 +54,9 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 		<?php foreach($allFunEvents as $fun):?>
 		<div class="col-md-4 category_fun_news">
 		<?php if(isset($fun->pic_extension)):?>
-			<img src="<?php echo $put;?>/images/<?php echo $fun->pic_extension;?>" class="news_image" />
+			<img src="<?php echo $put;?>images/<?php echo $fun->pic_extension;?>" class="news_image" />
 		<?php else: ?>
-			<img src="images/placeholder.jpg" class="news_image" />
+			<img src="<?php echo $put;?>images/placeholder.jpg" class="news_image" />
 		<?php endif;?>
 		
 			<a href="<?php echo $put;?>events/singleEvent.php?id=<?php echo $fun->id;?>"><h1><?php echo $fun->name;?></h1></a>
@@ -73,9 +73,9 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 		<div class="col-md-4 category_sport_news">
 
 		<?php if(isset($sport->pic_extension)):?>
-			<img src="<?php echo $put;?>/images/<?php echo $sport->pic_extension;?>" class="news_image" />
+			<img src="<?php echo $put;?>images/<?php echo $sport->pic_extension;?>" class="news_image" />
 		<?php else: ?>
-			<img src="images/placeholder.jpg" class="news_image" />
+			<img src="<?php echo $put;?>images/placeholder.jpg" class="news_image" />
 		<?php endif;?>
 			<a href="<?php echo $put;?>events/singleEvent.php?id=<?php echo $sport->id;?>"><h1><?php echo $sport->name;?></h1></a>
 			<p><?php echo $sport->description;?>...</p>
@@ -91,7 +91,7 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 		<?php if(isset($health->pic_extension)):?>
 			<img src="<?php echo $put;?>/images/<?php echo $health->pic_extension;?>" class="news_image" />
 		<?php else: ?>
-			<img src="images/placeholder.jpg" class="news_image" />		
+			<img src="<?php echo $put;?>images/placeholder.jpg" class="news_image" />
 		<?php endif;?>
 			<a href="<?php echo $put;?>events/singleEvent.php?id=<?php echo $health->id;?>"><h1><?php echo $health->name;?></h1></a>
 			<p><?php echo $health->description;?>...</p>
@@ -107,7 +107,7 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 		<?php if(isset($work->pic_extension)):?>
 			<img src="<?php echo $put;?>/images/<?php echo $work->pic_extension;?>" class="news_image" />
 		<?php else: ?>
-			<img src="images/placeholder.jpg" class="news_image" />		
+			<img src="<?php echo $put;?>images/placeholder.jpg" class="news_image" />
 		<?php endif;?>
 			<a href="<?php echo $put;?>events/singleEvent.php?id=<?php echo $work->id;?>"><h1><?php echo $work->name;?></h1></a>
 			<p><?php echo $work->description;?>...</p>
@@ -124,7 +124,7 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 		<?php if(isset($cult->pic_extension)):?>
 			<img src="<?php echo $put;?>/images/<?php echo $cult->pic_extension;?>" class="news_image" />
 		<?php else: ?>
-			<img src="images/placeholder.jpg" class="news_image" />		
+			<img src="<?php echo $put;?>images/placeholder.jpg" class="news_image" />		
 		<?php endif;?>
 			<a href="<?php echo $put;?>events/singleEvent.php?id=<?php echo $cult->id;?>"><h1><?php echo $cult->name;?></h1></a>
 			<p><?php echo $cult->description;?>...</p>
@@ -141,7 +141,7 @@ $allEduEvents = $categoryEdu->fetchAll(PDO::FETCH_OBJ);
 		<?php if(isset($edu->pic_extension)):?>
 			<img src="<?php echo $put;?>/images/<?php echo $edu->pic_extension;?>" class="news_image" />
 		<?php else: ?>
-			<img src="images/placeholder.jpg" class="news_image" />		
+			<img src="<?php echo $put;?>images/placeholder.jpg" class="news_image" />		
 		<?php endif;?>
 			<a href="<?php echo $put;?>events/singleEvent.php?id=<?php echo $edu->id;?>"><h1><?php echo $edu->name;?></h1></a>
 			<p><?php echo $edu->description;?>...</p>
