@@ -15,7 +15,7 @@ $mysql_host = "localhost";
 $mysql_database = "KoprivnicaLifeDB";
 $mysql_user = "root";
 $mysql_password = "";
-$put="/KoprivnicaLife/";
+$put="/koprivnica/";
 
 
 //spajanje na bazu

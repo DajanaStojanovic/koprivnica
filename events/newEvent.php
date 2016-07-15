@@ -1,4 +1,4 @@
-<?php include 'konfiguracija.php';
+<?php include '../konfiguracija.php';
 
 if(!$_POST && !isset($_SESSION["userData"])){
 	echo "NO";

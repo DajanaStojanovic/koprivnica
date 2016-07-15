@@ -1,5 +1,5 @@
-<?php include 'konfiguracija.php';?>
-<?php include_once "header.php";
+<?php include '../konfiguracija.php';?>
+<?php include_once "../header.php";
 
 $event = $veza->prepare("select * from event where id=:id");
 $event->bindParam(":id", $_GET["id"]);
@@ -7,11 +7,11 @@ $event->execute();
 $getEvent = $event->fetch(PDO::FETCH_OBJ);
 
  if(!isset($_SESSION["userData"])){
-	header("location: odjava.php");
+	header("location: ../logout.php");
 }else{
 	if($_SESSION["userData"]->type!=1){
 		if($_SESSION["userData"]->id!=$getEvent->organizer){
-			header("location: odjava.php");
+			header("location: ../logout.php");
 		}
 	}
 }
@@ -83,7 +83,7 @@ $getEvent = $event->fetch(PDO::FETCH_OBJ);
 
 </div>
 
-<?php include_once "footer.php"; ?>
+<?php include_once "../footer.php"; ?>
 <script>
   $(function() {
     $( "#startDate" ).datepicker();
@@ -128,12 +128,12 @@ $("#addEvent").click(function(){
 	}
 	$.ajax({
 				type: 'POST',
-				url: 'updateEvent.php',
+				url: 'editEvent.php',
 				data: "name=" + eventTitle + "&description=" + eventDescription + "&location=" + eventAddress + "&category=" + category + "&price=" + price + "&organizer=" + organizer + "&start_day=" + startDay + "&start_month=" + startMonth + "&start_year=" +  startYear + "&finish_day=" + endDay + "&finish_month=" + endMonth + "&finish_year=" + endYear + "&pic_extension=null" + "&startTime=" + startTime + "&endTime=" + endTime,
 				dataType: 'text'
 			}).done(function(rezultat) {
 				if(rezultat!="NO"){
-					window.location.href="singlePost.php?id=" + rezultat;
+					window.location.href="singleEvent.php?id=" + rezultat;
 				}else{
 					alert("Došlo je do pogreške prilikom unosa događaja. Pokušajte ponovo.");
 				}				

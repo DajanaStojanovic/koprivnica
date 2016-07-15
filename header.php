@@ -18,18 +18,18 @@ session_start();?>
 <body>
 <?php if(!isset($_SESSION["userData"])):?>
 <div class="login_button">
-  <button data-toggle="modal" data-target="#myModal">Prijavi se</button>
+  <button data-toggle="modal" data-target="#myModal">Prijava</button>
 </div>
 
 <div class="register_button">
-  <button data-toggle="modal" data-target="#myModal1">Registriraj se</button>
+  <button data-toggle="modal" data-target="#myModal1">Registracija</button>
 </div>
 
 
 <?php else:?>
 <div class="login_button">
-  <a href="<?php echo $put;?>odjava.php"><button>Odjava</button></a>
-  <a href="<?php echo $put;?>addEvent.php"><button>Dodaj događaj</button></a>
+  <a href="<?php echo $put;?>logout.php"><button>Odjava</button></a>
+  <a href="<?php echo $put;?>events/newEventForm.php"><button>Dodaj događaj</button></a>
 </div>
 <?php endif;?>
 
@@ -47,13 +47,13 @@ session_start();?>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="index.php">Naslovna</a></li>
-        <li><a href="singleCategory.php?cat=Zabava">Zabava</a></li>
-      	<li><a href="singleCategory.php?cat=Sport">Sport</a></li>
-        <li><a href="singleCategory.php?cat=Zdravlje">Zdravlje</a></li>
-        <li><a href="singleCategory.php?cat=Posao">Posao</a></li>
-        <li><a href="singleCategory.php?cat=Kultura">Kultura</a></li>
-        <li><a href="singleCategory.php?cat=Obrazovanje">Obrazovanje</a></li>
+        <li><a href="<?php echo $put;?>index.php">Naslovna</a></li>
+        <li><a href="<?php echo $put;?>searchEventsCalendar.php?cat=Zabava">Zabava</a></li>
+      	<li><a href="<?php echo $put;?>searchEventsCalendar.php?cat=Sport">Sport</a></li>
+        <li><a href="<?php echo $put;?>searchEventsCalendar.php?cat=Zdravlje">Zdravlje</a></li>
+        <li><a href="<?php echo $put;?>searchEventsCalendar.php?cat=Posao">Posao</a></li>
+        <li><a href="<?php echo $put;?>searchEventsCalendar.php?cat=Kultura">Kultura</a></li>
+        <li><a href="<?php echo $put;?>searchEventsCalendar.php?cat=Obrazovanje">Obrazovanje</a></li>
       </ul>
 
 

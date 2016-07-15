@@ -1,9 +1,9 @@
 <div class="footer">
 <div class="partners col-md-6 col-sm-6 col-xs-6">
-		<a href="http://koprivnica.hr/" target="_blank"><img src="images/grb.png" /></a>
-		<a href="http://www.komunalac-kc.hr/" target="_blank"><img src="images/komunalac.png" /></a>
-		<a href="https://www.instagram.com/explore/locations/237078289/" target="_blank"><img src="images/insta.png" /></a>
-		<a href="https://www.facebook.com/grad.koprivnica.1/?fref=ts" target="_blank"><img src="images/face.png" /></a>
+		<a href="http://koprivnica.hr/" target="_blank"><img src="<?php echo $put;?>images/grb.png" /></a>
+		<a href="http://www.komunalac-kc.hr/" target="_blank"><img src="<?php echo $put;?>images/komunalac.png" /></a>
+		<a href="https://www.instagram.com/explore/locations/237078289/" target="_blank"><img src="<?php echo $put;?>images/insta.png" /></a>
+		<a href="https://www.facebook.com/grad.koprivnica.1/?fref=ts" target="_blank"><img src="<?php echo $put;?>images/face.png" /></a>
 </div>
 <div class="partners col-md-6 col-sm-6 col-xs-6">
  <p>Adresa:<strong>Zrinski trg 1, 48000 Koprivnica</strong></p>
@@ -37,7 +37,7 @@ sr.reveal('dodasklasu', {reset: false, viewOffset: { top: 64 } });
 	  $('#myInput').focus()
 	})
 </script>
-<?php include_once "registerForm.php"; ?>
+<?php include_once  "registerForm.php"; ?>
 <?php include_once "loginForm.php"; ?>
 
 </body>

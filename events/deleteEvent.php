@@ -1,5 +1,5 @@
 <?php
-include_once 'konfiguracija.php';
+include_once '../konfiguracija.php';
 if(!$_POST){
 	echo "NO";
 }else{

@@ -1,11 +1,11 @@
-<?php include 'konfiguracija.php';?>
+<?php include '../konfiguracija.php';?>
 <?php
 $event = $veza->prepare("select * from event where id=:id");
 $event->bindParam(":id", $_GET["id"]);
 $event->execute();
 $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 ?>
-<?php include_once "header.php"; ?>
+<?php include_once "../header.php"; ?>
 
 <div class="single_post" style="text-align: center;">
 	<h1><?php echo $singleEvent->name;?></h1>
@@ -27,6 +27,15 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 		    <p>Cijena događaja: <strong><?php echo $singleEvent->price;?> </strong></p>
 		<?php
 		} else { echo "Događaj je besplatan";}; ?>
+		
+		<?php 
+		if(isset($_SESSION["userData"])){
+		if($_SESSION["userData"]->type==1 || $_SESSION["userData"]->id==$events->id){?>
+			<button class="btn btn-default delete" id="<?php echo $singleEvent->id;?>"> Obriši </button>
+		<a href="<?php echo $put;?>events/editEventForm.php?id=<?php echo $singleEvent->id ;?>"><button class="btn btn-default edit">Uredi</button></a>
+		<?php
+		}
+	}?>
 
 </div>
 	<div class="col-md-4">
@@ -45,7 +54,7 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 		<div id="map"></div>
 	</div>
 	<br/>
-<?php include_once "footer.php"; ?>
+<?php include_once "../footer.php"; ?>
 <script>
 //GOOGLE MAPS
 	function initMap() {
@@ -81,6 +90,22 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
 			  }
 			});
       }
+$(".delete").click(function(){
+	var id = $(this).attr("id");
+	var element = $(this);
+	$.ajax({
+				type: 'POST',
+				url: 'deleteEvent.php',
+				data: "id=" + id,
+				dataType: 'text'
+			}).done(function(rezultat) {
+				if(rezultat=="OK"){
+					element.parent().parent().remove();
+				}else{
+					alert("Došlo je do pogreške, pokušajte ponovo");
+				}			
+			});
+});
 </script>
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOCim7sdyd7HCXCVDAKE3p5mvufO8xkDc&callback=initMap">
