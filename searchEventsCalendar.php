@@ -130,9 +130,21 @@ $(".getDayEvents").on("click", function(){
 								var pic = "<img src=\"" + path + "images/" + event.pic_extension + "\"/>"
 							}
 							//OVDJE PREUREĐUJEŠ PRIKAZIVANJE EVENATA PO POTREBI
-							$("#events").append('<div class="single_day_content row"><div class="col-md-3 single_day_image">' + pic + '</div>	<div class="col-md-7 single_day_description"><a href="' + path + '/events/singleEvent.php?id=' + event.id + '"><h3>' + event.name + '</h3></a>	<p>' + event.description + '</p></div><div class="col-md-2 single_day_location">	<a target="_blank" href="' + path + 'events/singleEvent.php?id=' +  event.id + '#mapwrap"><button class="btn btn-default"> Lokacija </button></a></div></div>');
+							$("#events").append(
+							'<div class="single_day_content row">' + 
+								'<div class="col-md-3 single_day_image">' + pic + '</div>' + 
+								'<div class="col-md-7 single_day_description">' +
+									'<a href="' + path + '/events/singleEvent.php?id=' + event.id + '">' +
+										'<h3>' + event.name + '</h3>' +
+									'</a>' +
+									'<p>' + event.description + '</p>' +
+								'</div>' +
+								'<div class="col-md-2 single_day_location">' +
+									'<a target="_blank" href="' + path + 'events/singleEvent.php?id=' +  event.id + '#mapwrap"><button class="btn btn-default"> Lokacija </button></a>' +
+								'</div>' +
+							'</div>');
 						});
-						
+						//SCROLL ANIMACIJA
 						$('html, body').animate({
 								scrollTop: $("#events").offset().top
 							}, 1000);
