@@ -96,9 +96,11 @@ if(!isset($_GET["setMonth"])){
 	</div>
 	
 	<!-- DOGAĐAJI -->
+
 	<div class="row" id="events">
 		
 	</div>
+	
 </div>
 
 <?php include_once "footer.php"; ?>
@@ -112,19 +114,33 @@ $(".getDayEvents").on("click", function(){
 	var category = "<?php echo $_GET["cat"];?>";
 	$.ajax({
 				type: 'POST',
-				url: 'filterEventsCalendar.php',
+				url: 'searchEventsCalendarFilter.php',
 				data: "day=" + day + "&month=" + month + "&cat=" + category,
-				dataType: 'text'
-			}).done(function(rezultat) {
-				if(rezultat!="NO"){
+				dataType: 'text',
+				success: function(serverResponse){
+					if(serverResponse!="NO"){
+						var result = $.parseJSON(serverResponse);
+						var path = "<?php echo $put;?>";
 						$("#events").empty();
-						$("#events").append(rezultat);
+						
+						$.each(result, function(key, event){
+							if(event.pic_extension==""){
+								var pic = "<img src=\"" + path + "images/placeholder.jpg\" />";
+							}else{
+								var pic = "<img src=\"" + path + "images/" + event.pic_extension + "\"/>"
+							}
+							//OVDJE PREUREĐUJEŠ PRIKAZIVANJE EVENATA PO POTREBI
+							$("#events").append('<div class="single_day_content row"><div class="col-md-3 single_day_image">' + pic + '</div>	<div class="col-md-7 single_day_description"><a href="' + path + '/events/singleEvent.php?id=' + event.id + '"><h3>' + event.name + '</h3></a>	<p>' + event.description + '</p></div><div class="col-md-2 single_day_location">	<a target="_blank" href="' + path + 'events/singleEvent.php?id=' +  event.id + '#mapwrap"><button class="btn btn-default"> Lokacija </button></a></div></div>');
+						});
+						
 						$('html, body').animate({
-							scrollTop: $("#events").offset().top
-						}, 1000);
-				}else{
-					alert("Došlo je do pogreške. Pokušajte ponovo.");
-				}				
+								scrollTop: $("#events").offset().top
+							}, 1000);
+					}else{
+						alert("Došlo je do pogreške, pokušajte ponovo");
+					}
+					
+				}
 			});
 	return false;	
 	
