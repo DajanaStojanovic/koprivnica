@@ -92,7 +92,7 @@ $singleEvent = $event->fetch(PDO::FETCH_OBJ);
       }
 $(".delete").click(function(){
 	var id = $(this).attr("id");
-	var element = $(this);
+	var cat = "<?php echo $singleEvent->category;?>";
 	$.ajax({
 				type: 'POST',
 				url: 'deleteEvent.php',
@@ -100,7 +100,7 @@ $(".delete").click(function(){
 				dataType: 'text'
 			}).done(function(rezultat) {
 				if(rezultat=="OK"){
-					element.parent().parent().remove();
+					window.location.href="../searchEventsCalendar.php?cat=" + cat;
 				}else{
 					alert("Došlo je do pogreške, pokušajte ponovo");
 				}			

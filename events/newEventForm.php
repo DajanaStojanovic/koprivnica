@@ -92,20 +92,17 @@
 					</div>
 					
 					<div class="col-sm-6">
-						<label for="startTime"> Vrijeme početka </label>
+						<label for="startTime"> Vrijeme početka* </label>
 						<input type="text" class="form-control date"  id="startTime" style="width: 100%">
 					</div>
 					<div class="col-sm-6">
-						<label for="endTime"> Vrijeme završetka </label>
+						<label for="endTime"> Vrijeme završetka* </label>
 						<input type="text" class="form-control date"  id="endTime" style="width: 100%">
 					</div>
 					
 					<div class="col-sm-6">
 						<label for="price"> Cijena u kunama </label>
-						<div class="input-group" style="z-index: -70">
-							<div class="input-group-addon">kn</div>
-							<input type="text" class="form-control" id="price" placeholder="npr. 19.99">
-						</div>
+						<input type="text" class="form-control" id="price" placeholder="npr. 19.99">
 					</div>
 					
 					<div class="col-sm-6">
@@ -140,9 +137,9 @@ $("#addEvent").click(function(){
 	var eventDescription = $.trim($("#eventDescription").val());
 	var eventAddressCustom = $.trim($("#eventAddressCustom").val());
 	if(eventAddressCustom==""){
-		var eventAddress = $.trim($("#eventAddressSelect").val() + " " + $("#eventAddressSelectNum").val());
+		var eventAddress = $.trim($("#eventAddressSelect").val() + " " + $("#eventAddressSelectNum").val() + ", Koprivnica");
 	}else{
-		var eventAddress = eventAddressCustom;
+		var eventAddress = eventAddressCustom + ", Koprivnica";
 	}
 	var category = $("#category").val();
 	var organizer = "<?php echo $_SESSION["userData"]->id;?>";
@@ -163,7 +160,7 @@ $("#addEvent").click(function(){
 	var endYear = endDate.split("/")[2];
 	var endTime = $("#endTime").val();
 	if(endTime=="" || startTime=="" || eventTitle=="" || eventDescription=="" || eventAddress=="" || startDate=="" || endDate==""){
-		alert("Svi podaci moraju biti popunjeni osim vanjske poveznice");
+		alert("Podaci označeni s * moraju biti popunjeni");
 		return false;
 	}
 	if( (new Date(startDate).getTime() > new Date(endDate).getTime()))
